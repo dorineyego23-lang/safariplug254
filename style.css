@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #222;
+}
+
+header {
+  background: #000;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: gold;
+  font-weight: bold;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+}
+
+.hero {
+  position: relative;
+  background: url('https://source.unsplash.com/1600x800/?kenya,safari') no-repeat center/cover;
+  text-align: center;
+  color: white;
+  padding: 120px 20px;
+}
+
+.hero .overlay {
+  background: url('logo.png') no-repeat center;
+  background-size: 200px;
+  opacity: 0.1;
+  position: absolute;
+  inset: 0;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  z-index: 2;
+  position: relative;
+}
+
+.hero p {
+  z-index: 2;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.hero-buttons .btn {
+  margin: 5px;
+  padding: 10px 20px;
+  background: gold;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.gallery, .attractions, .museums, .contact {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.slider img {
+  display: none;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.slider img:first-child {
+  display: block;
+}
+
+footer {
+  background: #000;
+  color: gold;
+  text-align: center;
+  padding: 20px;
+}
