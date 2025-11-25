@@ -12,8 +12,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body class="bg-[#FFF8E7] text-gray-900 font-poppins">
-  <header class="sticky top-0 z-50 bg-white shadow-lg">
-    <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
+  <header class="sticky top-0 z-50 bg-[#FFF8E7] shadow-lg">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4 bg-white">
       <a href="index.html" class="flex items-center gap-3">
         <img src="A_logo_for_Nomad_Luxe_Safaris,_a_Kenyan_safari_com.png" alt="SafariPlug254 Logo" class="h-12 w-12 sm:h-14 sm:w-14 rounded-full border-2 border-yellow-600 shadow-md bg-white object-cover">
         <span class="text-lg sm:text-2xl font-extrabold tracking-wide text-yellow-700 hidden sm:inline drop-shadow">SafariPlug254</span>
@@ -21,25 +21,29 @@
       <button id="menu-btn" class="sm:hidden flex items-center px-3 py-2 border rounded text-yellow-700 border-yellow-700 focus:outline-none" aria-label="Open Menu">
         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
-      <div id="nav-links" class="hidden sm:flex sm:flex-row flex-col space-y-2 sm:space-y-0 sm:space-x-8 text-yellow-700 font-semibold text-base sm:text-lg bg-white sm:bg-transparent absolute sm:static top-16 left-0 w-full sm:w-auto z-40 sm:z-auto border-b sm:border-0 border-yellow-100 sm:shadow-none shadow-lg">
-        <a href="index.html#about" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">About</a>
-        <a href="index.html#attractions" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Attractions</a>
-        <a href="index.html#tours" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Signature Tours</a>
-        <a href="index.html#gallery" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Gallery</a>
-        <a href="index.html#contact" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Contact</a>
-        <!-- Merchandise removed -->
-        <a href="packages.html" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Packages</a>
-      </div>
+      <ul id="nav-links" class="hidden sm:flex space-x-8 text-yellow-700 font-semibold text-base sm:text-lg bg-[#FFF8E7] sm:bg-transparent absolute sm:static top-16 left-0 w-full sm:w-auto z-40 sm:z-auto flex-col sm:flex-row border-b sm:border-0 border-yellow-100 sm:shadow-none shadow-lg">
+        <li><a href="index.html#about" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">About</a></li>
+        <li class="relative" id="main-dropdown-parent">
+          <button class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition flex items-center gap-1" id="main-dropdown-btn" aria-haspopup="true" aria-expanded="false" tabindex="0">Top Attractions <svg class="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="absolute left-0 mt-2 w-56 bg-white border border-yellow-200 rounded-lg shadow-lg py-2 z-50 hidden" id="main-dropdown-menu">
+            <li><a href="index.html#attractions" class="block px-4 py-2 text-gray-800 hover:bg-yellow-100">All Attractions</a></li>
+            <li><a href="index.html#tours" class="block px-4 py-2 text-gray-800 hover:bg-yellow-100">Signature Tours</a></li>
+            <li><a href="index.html#museums" class="block px-4 py-2 text-gray-800 hover:bg-yellow-100">Museums</a></li>
+            <li><a href="index.html#gallery" class="block px-4 py-2 text-gray-800 hover:bg-yellow-100">Gallery</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#contact" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Contact</a></li>
+        <li><a href="packages.html" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Packages</a></li>
+      </ul>
     </nav>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
+        const dropdownBtn = document.getElementById('main-dropdown-btn');
+        const dropdownMenu = document.getElementById('main-dropdown-menu');
         function closeMenu() {
-          if (window.innerWidth < 640) {
-            navLinks.classList.add('hidden');
-            navLinks.classList.remove('flex');
-          }
+          navLinks.classList.add('hidden');
         }
         function openMenu() {
           navLinks.classList.remove('hidden');
@@ -58,6 +62,49 @@
             navLinks.style.borderRadius = '';
           }
         });
+        // Dropdown logic (desktop and mobile)
+        if (dropdownBtn && dropdownMenu) {
+          // Desktop: show on hover (parent li, not just button)
+          const parent = document.getElementById('main-dropdown-parent');
+          let dropdownHover = false;
+          function showDropdown() {
+            if (window.innerWidth >= 640) {
+              dropdownMenu.classList.remove('hidden');
+              dropdownBtn.setAttribute('aria-expanded', 'true');
+            }
+          }
+          function hideDropdown() {
+            if (window.innerWidth >= 640 && !dropdownHover) {
+              dropdownMenu.classList.add('hidden');
+              dropdownBtn.setAttribute('aria-expanded', 'false');
+            }
+          }
+          parent.addEventListener('mouseenter', () => {
+            dropdownHover = true;
+            showDropdown();
+          });
+          parent.addEventListener('mouseleave', () => {
+            dropdownHover = false;
+            setTimeout(hideDropdown, 100);
+          });
+          dropdownMenu.addEventListener('mouseenter', () => {
+            dropdownHover = true;
+            showDropdown();
+          });
+          dropdownMenu.addEventListener('mouseleave', () => {
+            dropdownHover = false;
+            setTimeout(hideDropdown, 100);
+          });
+          // Mobile: toggle on click
+          dropdownBtn.addEventListener('click', function(e) {
+            if (window.innerWidth < 640) {
+              e.preventDefault();
+              const expanded = dropdownBtn.getAttribute('aria-expanded') === 'true';
+              dropdownBtn.setAttribute('aria-expanded', !expanded);
+              dropdownMenu.classList.toggle('hidden');
+            }
+          });
+        }
         // Close menu when a link is clicked (mobile only)
         Array.from(navLinks.querySelectorAll('a')).forEach(link => {
           link.addEventListener('click', () => {
@@ -72,152 +119,251 @@
             navLinks.style.background = '';
             navLinks.style.boxShadow = '';
             navLinks.style.borderRadius = '';
+            if (dropdownMenu) dropdownMenu.classList.add('hidden');
+            if (dropdownBtn) dropdownBtn.setAttribute('aria-expanded', 'false');
           } else {
             closeMenu();
           }
         });
-        // On load, ensure correct menu state
-        if (window.innerWidth >= 640) {
-          navLinks.classList.remove('hidden');
-          navLinks.classList.add('flex');
-        } else {
-          closeMenu();
-        }
       });
     </script>
   </header>
-  <main class="max-w-5xl mx-auto py-16 px-4">
-    <!-- Hero Banner -->
-    <div class="rounded-3xl bg-gradient-to-br from-yellow-100 via-white to-green-100 shadow-xl mb-12 py-10 px-6 flex flex-col items-center text-center">
-      <h1 class="text-5xl font-extrabold text-orange-600 mb-4 drop-shadow">Safari Packages</h1>
-      <p class="text-xl text-gray-700 mb-4 max-w-2xl">Choose from our curated per-day packages or request a fully customized safari to any destination in Kenya. All packages can be tailored to your needs and preferences.</p>
-  <span class="inline-block bg-yellow-400 text-black font-semibold rounded-full px-4 py-2 text-sm shadow mb-2">Tour vehicle hire from $160 per 3-4 hrs (excludes park entry fees)</span>
-      <span class="inline-block bg-green-200 text-green-900 font-semibold rounded-full px-4 py-2 text-xs shadow">Entry fees are listed separately below</span>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Per Day Packages -->
-      <div class="bg-gradient-to-br from-yellow-50 via-white to-green-50 rounded-2xl shadow-xl p-8 flex flex-col gap-4 border border-yellow-200 hover:scale-105 transition-transform duration-300">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="inline-block bg-yellow-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Popular</span>
-          <h2 class="text-2xl font-extrabold text-yellow-700">Masai Mara National Reserve</h2>
+  <main class="max-w-7xl mx-auto py-12 px-4">
+    <!-- Redesigned Hero -->
+    <section class="rounded-3xl bg-gradient-to-br from-yellow-100 via-white to-green-100 shadow-xl mb-10 py-12 px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-orange-600 mb-3">Explore Our Safari & Coastal Packages</h1>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-4">Handpicked itineraries across Kenya — from Masai Mara game drives to Diani beach escapes. All packages can be tailored to your needs. Tour vehicle hire from <strong>$160</strong> per 3–4 hrs (entry fees separate).</p>
+      <div class="flex flex-wrap justify-center gap-3 mt-3">
+        <a href="#packages-grid" class="px-5 py-3 bg-yellow-400 text-black font-bold rounded shadow hover:bg-yellow-500 transition">Browse Packages</a>
+        <a href="mailto:info@nomadluxe.co.ke?subject=Request%20Custom%20Safari" class="px-5 py-3 bg-green-600 text-white font-bold rounded shadow hover:bg-green-700 transition">Request Custom Quote</a>
+      </div>
+    </section>
+
+    <!-- Filters & Search -->
+    <section class="mb-8">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filter packages">
+          <button class="filter-btn px-4 py-2 rounded-full bg-white border text-sm font-semibold text-gray-800 shadow-sm" data-filter="all">All</button>
+          <button class="filter-btn px-4 py-2 rounded-full bg-white border text-sm font-semibold text-gray-800 shadow-sm" data-filter="safari">Safari</button>
+          <button class="filter-btn px-4 py-2 rounded-full bg-white border text-sm font-semibold text-gray-800 shadow-sm" data-filter="coast">Coast</button>
+          <button class="filter-btn px-4 py-2 rounded-full bg-white border text-sm font-semibold text-gray-800 shadow-sm" data-filter="custom">Custom</button>
         </div>
-        <ul class="list-disc list-inside text-gray-700 mb-2">
-          <li>Tour vehicle hire from $160 per 3-4 hrs <span class="text-xs text-gray-500">(excludes entry fee)</span></li>
-          <li><span class="font-semibold text-green-700">Entry fee:</span> $80 per adult per day</li>
-          <li>Game drives, Big Five, Great Migration (seasonal)</li>
-          <li>Luxury tented camps & lodges available</li>
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <input id="pkg-search" type="search" placeholder="Search packages (e.g., Masai Mara)" class="px-4 py-2 rounded-lg border w-full sm:w-72" aria-label="Search packages">
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages Grid -->
+    <section id="packages-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card: Masai Mara -->
+      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-yellow-100" data-category="safari">
+        <img src="b2.jpg" alt="Masai Mara" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-extrabold text-yellow-700">Masai Mara — Day Safari</h3>
+            <span class="text-sm font-bold bg-yellow-400 text-black px-3 py-1 rounded-full">From $160</span>
+          </div>
+          <p class="text-sm text-gray-700 mt-2">Game drives, Big Five sightings, seasonal Great Migration (Jul–Oct).</p>
+          <ul class="text-sm text-gray-600 mt-3 space-y-1">
+            <li>• 3–4 hrs vehicle hire recommended</li>
+            <li>• Entry fee: $80/adult</li>
+            <li>• Luxury tented camps available</li>
+          </ul>
+          <div class="mt-4 flex gap-2">
+            <button class="details-btn flex-1 px-4 py-2 bg-white border text-yellow-700 font-semibold rounded-lg" aria-expanded="false">View Details</button>
+            <a href="mailto:info@nomadluxe.co.ke?subject=Booking%20Masai%20Mara" class="px-4 py-2 bg-yellow-400 text-black font-bold rounded-lg">Book Now</a>
+          </div>
+          <div class="details-panel mt-3 hidden text-sm text-gray-700">
+            <p>Full-day and multi-day itineraries available. Transport, guide, and accommodation can be arranged. Contact us to customize.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Amboseli -->
+      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-green-100" data-category="safari">
+        <img src="b3.jpg" alt="Amboseli" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-extrabold text-green-700">Amboseli — Half/Full Day</h3>
+            <span class="text-sm font-bold bg-green-200 text-green-900 px-3 py-1 rounded-full">From $160</span>
+          </div>
+          <p class="text-sm text-gray-700 mt-2">Iconic views of Mt. Kilimanjaro, elephants, and birdlife.</p>
+          <ul class="text-sm text-gray-600 mt-3 space-y-1">
+            <li>• 3–4 hrs vehicle hire recommended</li>
+            <li>• Entry fee: $60/adult</li>
+          </ul>
+          <div class="mt-4 flex gap-2">
+            <button class="details-btn flex-1 px-4 py-2 bg-white border text-green-700 font-semibold rounded-lg" aria-expanded="false">View Details</button>
+            <a href="mailto:info@nomadluxe.co.ke?subject=Booking%20Amboseli" class="px-4 py-2 bg-green-600 text-white font-bold rounded-lg">Book Now</a>
+          </div>
+          <div class="details-panel mt-3 hidden text-sm text-gray-700"><p>Enjoy game drives with views of Kilimanjaro. Transfers and full itineraries available on request.</p></div>
+        </div>
+      </article>
+
+      <!-- Card: Lake Nakuru -->
+      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-yellow-100" data-category="safari">
+        <img src="b3.jpg" alt="Lake Nakuru" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-extrabold text-yellow-700">Lake Nakuru — Day Trip</h3>
+            <span class="text-sm font-bold bg-yellow-400 text-black px-3 py-1 rounded-full">From $160</span>
+          </div>
+          <p class="text-sm text-gray-700 mt-2">Flamingos, rhinos and scenic lakeside views.</p>
+          <ul class="text-sm text-gray-600 mt-3 space-y-1">
+            <li>• 3–4 hrs vehicle hire recommended</li>
+            <li>• Entry fee: $60/adult</li>
+          </ul>
+          <div class="mt-4 flex gap-2">
+            <button class="details-btn flex-1 px-4 py-2 bg-white border text-yellow-700 font-semibold rounded-lg" aria-expanded="false">View Details</button>
+            <a href="mailto:info@nomadluxe.co.ke?subject=Booking%20Lake%20Nakuru" class="px-4 py-2 bg-yellow-400 text-black font-bold rounded-lg">Book Now</a>
+          </div>
+          <div class="details-panel mt-3 hidden text-sm text-gray-700"><p>Combine with visits to nearby conservancies and lodges for a full experience.</p></div>
+        </div>
+      </article>
+
+      <!-- Card: Tsavo -->
+      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-green-100" data-category="safari">
+        <img src="b2.jpg" alt="Tsavo" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-extrabold text-green-700">Tsavo East & West — Multi-Day</h3>
+            <span class="text-sm font-bold bg-green-200 text-green-900 px-3 py-1 rounded-full">From $160</span>
+          </div>
+          <p class="text-sm text-gray-700 mt-2">Vast wilderness, red elephants, and unique landscapes.</p>
+          <ul class="text-sm text-gray-600 mt-3 space-y-1">
+            <li>• Multi-day itineraries available</li>
+            <li>• Entry fee: $52/adult</li>
+          </ul>
+          <div class="mt-4 flex gap-2">
+            <button class="details-btn flex-1 px-4 py-2 bg-white border text-green-700 font-semibold rounded-lg" aria-expanded="false">View Details</button>
+            <a href="mailto:info@nomadluxe.co.ke?subject=Booking%20Tsavo" class="px-4 py-2 bg-green-600 text-white font-bold rounded-lg">Book Now</a>
+          </div>
+          <div class="details-panel mt-3 hidden text-sm text-gray-700"><p>We can combine Tsavo with Amboseli or Beach stays for a mixed experience.</p></div>
+        </div>
+      </article>
+
+      <!-- Card: Samburu -->
+      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-yellow-100" data-category="safari">
+        <img src="b3.jpg" alt="Samburu" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-extrabold text-yellow-700">Samburu — Wildlife & Culture</h3>
+            <span class="text-sm font-bold bg-yellow-400 text-black px-3 py-1 rounded-full">From $160</span>
+          </div>
+          <p class="text-sm text-gray-700 mt-2">Unique northern species, culture, and riverside lodges.</p>
+          <ul class="text-sm text-gray-600 mt-3 space-y-1">
+            <li>• 3–4 hrs vehicle hire recommended</li>
+            <li>• Entry fee: $70/adult</li>
+          </ul>
+          <div class="mt-4 flex gap-2">
+            <button class="details-btn flex-1 px-4 py-2 bg-white border text-yellow-700 font-semibold rounded-lg" aria-expanded="false">View Details</button>
+            <a href="mailto:info@nomadluxe.co.ke?subject=Booking%20Samburu" class="px-4 py-2 bg-yellow-400 text-black font-bold rounded-lg">Book Now</a>
+          </div>
+          <div class="details-panel mt-3 hidden text-sm text-gray-700"><p>Combine wildlife viewing with community visits and cultural experiences.</p></div>
+        </div>
+      </article>
+
+      <!-- Card: Diani Beach -->
+      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-green-100" data-category="coast">
+        <img src="b2.jpg" alt="Diani Beach" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-extrabold text-green-700">Diani Beach — Coastal Relax</h3>
+            <span class="text-sm font-bold bg-green-200 text-green-900 px-3 py-1 rounded-full">From $160</span>
+          </div>
+          <p class="text-sm text-gray-700 mt-2">White sand beaches, water sports and relaxation packages.</p>
+          <ul class="text-sm text-gray-600 mt-3 space-y-1">
+            <li>• Resort packages available</li>
+            <li>• Marine park fees may apply</li>
+          </ul>
+          <div class="mt-4 flex gap-2">
+            <button class="details-btn flex-1 px-4 py-2 bg-white border text-green-700 font-semibold rounded-lg" aria-expanded="false">View Details</button>
+            <a href="mailto:info@nomadluxe.co.ke?subject=Booking%20Diani%20Beach" class="px-4 py-2 bg-green-600 text-white font-bold rounded-lg">Book Now</a>
+          </div>
+          <div class="details-panel mt-3 hidden text-sm text-gray-700"><p>Combine with nearby marine parks for snorkeling and diving experiences.</p></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Entry Fees & Custom CTA -->
+    <section class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-green-50 rounded-lg shadow p-6">
+        <h2 class="text-xl font-bold text-green-700 mb-3">Park Entry Fees (per adult, per day)</h2>
+        <ul class="text-sm text-gray-700 space-y-1">
+          <li>Masai Mara — $80</li>
+          <li>Amboseli — $60</li>
+          <li>Lake Nakuru — $60</li>
+          <li>Tsavo East/West — $52</li>
+          <li>Samburu — $70</li>
+          <li>Nairobi National Park — $43</li>
+          <li>Aberdare — $52</li>
+          <li>Mount Kenya — $52</li>
+          <li>Hell's Gate — $26</li>
         </ul>
-        <button class="mt-2 bg-yellow-400 text-black font-bold py-2 rounded-lg shadow hover:bg-yellow-500 transition">Book Now</button>
+        <p class="text-xs text-gray-600 mt-3">* Fees subject to change. Residents and children may have reduced rates.</p>
       </div>
-      <div class="bg-gradient-to-br from-green-50 via-white to-yellow-50 rounded-2xl shadow-xl p-8 flex flex-col gap-4 border border-green-200 hover:scale-105 transition-transform duration-300">
-        <h2 class="text-2xl font-extrabold text-green-700 mb-2">Amboseli National Park</h2>
-        <ul class="list-disc list-inside text-gray-700 mb-2">
-          <li>Tour vehicle hire from $160 per 3-4 hrs <span class="text-xs text-gray-500">(excludes entry fee)</span></li>
-          <li><span class="font-semibold text-green-700">Entry fee:</span> $60 per adult per day</li>
-          <li>Views of Mt. Kilimanjaro, elephants, birdlife</li>
-          <li>Luxury lodges & eco-camps available</li>
-        </ul>
-        <button class="mt-2 bg-green-600 text-white font-bold py-2 rounded-lg shadow hover:bg-green-700 transition">Book Now</button>
+      <div class="bg-yellow-50 rounded-lg shadow p-6 flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-green-700 mb-2">Create Your Own Safari</h2>
+          <p class="text-gray-700 mb-4">Tell us where you'd like to go and what style of travel you prefer — we will craft a tailored itinerary and quote.</p>
+        </div>
+        <div class="mt-2">
+          <a href="mailto:info@nomadluxe.co.ke?subject=Custom%20Safari%20Request" class="inline-block px-5 py-3 bg-yellow-600 text-black font-bold rounded hover:bg-yellow-700 transition">Request Custom Quote</a>
+        </div>
       </div>
-      <div class="bg-gradient-to-br from-yellow-50 via-white to-green-50 rounded-2xl shadow-xl p-8 flex flex-col gap-4 border border-yellow-200 hover:scale-105 transition-transform duration-300">
-        <h2 class="text-2xl font-extrabold text-yellow-700 mb-2">Lake Nakuru National Park</h2>
-        <ul class="list-disc list-inside text-gray-700 mb-2">
-          <li>Tour vehicle hire from $160 per 3-4 hrs <span class="text-xs text-gray-500">(excludes entry fee)</span></li>
-          <li><span class="font-semibold text-green-700">Entry fee:</span> $60 per adult per day</li>
-          <li>Flamingos, rhinos, scenic lake views</li>
-          <li>Luxury & mid-range lodges available</li>
-        </ul>
-        <button class="mt-2 bg-yellow-400 text-black font-bold py-2 rounded-lg shadow hover:bg-yellow-500 transition">Book Now</button>
-      </div>
-      <div class="bg-gradient-to-br from-green-50 via-white to-yellow-50 rounded-2xl shadow-xl p-8 flex flex-col gap-4 border border-green-200 hover:scale-105 transition-transform duration-300">
-        <h2 class="text-2xl font-extrabold text-green-700 mb-2">Tsavo East & West National Parks</h2>
-        <ul class="list-disc list-inside text-gray-700 mb-2">
-          <li>Tour vehicle hire from $160 per 3-4 hrs <span class="text-xs text-gray-500">(excludes entry fee)</span></li>
-          <li><span class="font-semibold text-green-700">Entry fee:</span> $52 per adult per day</li>
-          <li>Red elephants, Mzima Springs, vast wilderness</li>
-          <li>Luxury & adventure camps available</li>
-        </ul>
-        <button class="mt-2 bg-green-600 text-white font-bold py-2 rounded-lg shadow hover:bg-green-700 transition">Book Now</button>
-      </div>
-      <div class="bg-gradient-to-br from-yellow-50 via-white to-green-50 rounded-2xl shadow-xl p-8 flex flex-col gap-4 border border-yellow-200 hover:scale-105 transition-transform duration-300">
-        <h2 class="text-2xl font-extrabold text-yellow-700 mb-2">Samburu National Reserve</h2>
-        <ul class="list-disc list-inside text-gray-700 mb-2">
-          <li>Tour vehicle hire from $160 per 3-4 hrs <span class="text-xs text-gray-500">(excludes entry fee)</span></li>
-          <li><span class="font-semibold text-green-700">Entry fee:</span> $70 per adult per day</li>
-          <li>Unique wildlife, Samburu culture</li>
-          <li>Luxury riverside lodges available</li>
-        </ul>
-        <button class="mt-2 bg-yellow-400 text-black font-bold py-2 rounded-lg shadow hover:bg-yellow-500 transition">Book Now</button>
-      </div>
-      <div class="bg-gradient-to-br from-green-50 via-white to-yellow-50 rounded-2xl shadow-xl p-8 flex flex-col gap-4 border border-green-200 hover:scale-105 transition-transform duration-300">
-        <h2 class="text-2xl font-extrabold text-green-700 mb-2">Diani Beach & Coastal Kenya</h2>
-        <ul class="list-disc list-inside text-gray-700 mb-2">
-          <li>Tour vehicle hire from $160 per 3-4 hrs <span class="text-xs text-gray-500">(excludes entry fee)</span></li>
-          <li><span class="font-semibold text-green-700">Entry fee:</span> N/A (beach access is free, some marine parks may charge a fee)</li>
-          <li>White sand beaches, water sports, relaxation</li>
-          <li>Luxury beach resorts available</li>
-        </ul>
-        <button class="mt-2 bg-green-600 text-white font-bold py-2 rounded-lg shadow hover:bg-green-700 transition">Book Now</button>
-      </div>
-      <!-- Entry Fees Table -->
-      <div class="bg-green-50 rounded-lg shadow p-6 flex flex-col gap-3 md:col-span-2">
-        <h2 class="text-xl font-bold text-green-700 mb-2">Park Entry Fees (per adult, per day)</h2>
-        <table class="w-full text-left text-sm">
-          <thead><tr><th class="py-1 pr-4">Park</th><th class="py-1">Entry Fee (USD)</th></tr></thead>
-          <tbody>
-            <tr><td>Masai Mara</td><td>$80</td></tr>
-            <tr><td>Amboseli</td><td>$60</td></tr>
-            <tr><td>Lake Nakuru</td><td>$60</td></tr>
-            <tr><td>Tsavo East/West</td><td>$52</td></tr>
-            <tr><td>Samburu</td><td>$70</td></tr>
-            <tr><td>Nairobi National Park</td><td>$43</td></tr>
-            <tr><td>Aberdare</td><td>$52</td></tr>
-            <tr><td>Mount Kenya</td><td>$52</td></tr>
-            <tr><td>Hell's Gate</td><td>$26</td></tr>
-            <tr><td>Shimba Hills</td><td>$22</td></tr>
-            <tr><td>Meru National Park</td><td>$52</td></tr>
-            <tr><td>Ruma National Park</td><td>$22</td></tr>
-            <tr><td>Kakamega Forest</td><td>$22</td></tr>
-            <tr><td>Kisite-Mpunguti Marine Park</td><td>$17</td></tr>
-          </tbody>
-        </table>
-        <p class="text-xs text-gray-600 mt-2">* Entry fees are subject to change by KWS and local authorities. Children and residents pay reduced rates.</p>
-      </div>
-      <!-- Custom Package Option -->
-      <div class="bg-yellow-50 rounded-lg shadow p-6 flex flex-col gap-3 md:col-span-2">
-        <h2 class="text-2xl font-bold text-green-700 mb-2">Create Your Own Safari</h2>
-        <p class="text-gray-700 mb-2">Want a fully customized experience? Choose any combination of Kenya's top destinations:</p>
-        <ul class="list-disc list-inside text-gray-700 grid grid-cols-2 gap-x-6">
-          <li>Masai Mara</li>
-          <li>Amboseli</li>
-          <li>Lake Nakuru</li>
-          <li>Tsavo East</li>
-          <li>Tsavo West</li>
-          <li>Mount Kenya</li>
-          <li>Diani Beach</li>
-          <li>Watamu & Malindi</li>
-          <li>Lamu Old Town</li>
-          <li>Nairobi National Park</li>
-          <li>Samburu</li>
-          <li>Hell's Gate</li>
-          <li>Aberdare</li>
-          <li>Shimba Hills</li>
-          <li>Chyulu Hills</li>
-          <li>Kisite-Mpunguti Marine Park</li>
-          <li>Ruma National Park</li>
-          <li>Meru National Park</li>
-          <li>Kakamega Forest</li>
-          <li>Lake Victoria</li>
-        </ul>
-        <p class="text-gray-700 mt-2">Contact us to build your dream itinerary, select your preferred accommodation, and set your pace. Our team will provide a personalized quote.</p>
-        <button class="mt-4 bg-yellow-600 text-black font-bold py-2 rounded hover:bg-yellow-700 transition">Request Custom Quote</button>
-      </div>
-    </div>
+    </section>
   </main>
   <footer class="bg-gradient-to-br from-green-200 via-white to-yellow-100 text-green-900 py-10 mt-16 font-poppins border-t-2 border-green-300 shadow-inner">
       <div class="max-w-7xl mx-auto px-4 text-center text-green-800 text-xs border-t border-green-300 pt-6 font-semibold tracking-wide">
       <p>© 2025 SafariPlug254 – Kenya. All Rights Reserved. | <a href="#" class="underline hover:text-green-600">Privacy Policy</a> | <a href="#" class="underline hover:text-green-600">Terms of Service</a></p>
     </div>
   </footer>
+  <script>
+    // Packages page interactions: filters, search, details toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.package-card');
+      const search = document.getElementById('pkg-search');
+
+      function applyFilter(filter) {
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category') || 'safari';
+          const matches = filter === 'all' || cat === filter;
+          card.style.display = matches ? '' : 'none';
+        });
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('ring-2','ring-yellow-300'));
+          btn.classList.add('ring-2','ring-yellow-300');
+          applyFilter(btn.dataset.filter);
+        });
+      });
+
+      if (filterBtns.length) filterBtns[0].click(); // default to 'All'
+
+      search.addEventListener('input', () => {
+        const q = search.value.trim().toLowerCase();
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(q) ? '' : 'none';
+        });
+      });
+
+      // Details toggle
+      document.querySelectorAll('.details-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const panel = btn.closest('.package-card').querySelector('.details-panel');
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          if (panel) {
+            panel.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', String(!expanded));
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

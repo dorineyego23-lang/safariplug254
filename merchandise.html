@@ -30,207 +30,24 @@
       <script>
         document.addEventListener('DOMContentLoaded', function() {
           const menuBtn = document.getElementById('menu-btn');
-          const navLinks = document.getElementById('nav-links');
-          function closeMenu() {
-            if (window.innerWidth < 640) {
-              navLinks.classList.add('hidden');
-              navLinks.classList.remove('flex');
-            }
-          }
-          function openMenu() {
-            navLinks.classList.remove('hidden');
-            navLinks.classList.add('flex');
-          }
-          menuBtn.addEventListener('click', () => {
-            if (navLinks.classList.contains('hidden')) {
-              openMenu();
-              navLinks.style.background = '#fff';
-              navLinks.style.boxShadow = '0 8px 32px rgba(0,0,0,0.12)';
-              navLinks.style.borderRadius = '0 0 1rem 1rem';
-            } else {
-              closeMenu();
-              navLinks.style.background = '';
-              navLinks.style.boxShadow = '';
-              navLinks.style.borderRadius = '';
-            }
-          });
-          // Close menu when a link is clicked (mobile only)
-          Array.from(navLinks.querySelectorAll('a')).forEach(link => {
-            link.addEventListener('click', () => {
-              if (window.innerWidth < 640) closeMenu();
-            });
-          });
-          // Ensure menu is hidden on resize to desktop
-          window.addEventListener('resize', () => {
-            if (window.innerWidth >= 640) {
-              navLinks.classList.remove('hidden');
-              navLinks.classList.add('flex');
-              navLinks.style.background = '';
-              navLinks.style.boxShadow = '';
-              navLinks.style.borderRadius = '';
-            } else {
-              closeMenu();
-            }
-          });
-          // On load, ensure correct menu state
-          if (window.innerWidth >= 640) {
-            navLinks.classList.remove('hidden');
-            navLinks.classList.add('flex');
-          } else {
-            closeMenu();
-          }
-        });
-      </script>
-    </header>
-    <main class="flex-1 py-10 px-2 sm:px-4 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-8">
-          <h1 class="text-3xl md:text-4xl font-extrabold text-yellow-700 mb-2 tracking-tight">African Cultural Treasures</h1>
-          <div class="w-24 h-1 bg-yellow-600 mx-auto rounded mb-4"></div>
-          <p class="text-gray-700 text-lg max-w-2xl mx-auto">Discover authentic Kenyan and Maasai crafts, jewelry, and traditional items. Shop unique souvenirs, decor, and accessories that celebrate Africa's rich heritage.</p>
-        </div>
-        <div class="flex flex-wrap justify-center gap-2 mb-8" id="category-filters">
-          <button class="px-4 py-1 rounded-full bg-yellow-100 text-yellow-800 font-semibold border border-yellow-300 hover:bg-yellow-200 transition" data-category="all">All Items</button>
-          <button class="px-4 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold border border-gray-300 hover:bg-yellow-100 transition" data-category="Maasai Jewelry">Maasai Jewelry</button>
-          <button class="px-4 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold border border-gray-300 hover:bg-yellow-100 transition" data-category="African Decor">African Decor</button>
-          <button class="px-4 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold border border-gray-300 hover:bg-yellow-100 transition" data-category="Traditional Crafts">Traditional Crafts</button>
-          <button class="px-4 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold border border-gray-300 hover:bg-yellow-100 transition" data-category="Travel Accessories">Travel Accessories</button>
-          <button class="px-4 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold border border-gray-300 hover:bg-yellow-100 transition" data-category="Traditional Clothing">Traditional Clothing</button>
-          <button class="px-4 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold border border-gray-300 hover:bg-yellow-100 transition" data-category="Souvenirs">Souvenirs</button>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="merchandise-items">
-          <!-- Each card now has a data-category attribute for filtering -->
-          <!-- Quick View Modal -->
-          <div id="quick-view-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
-            <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative animate-fade-in">
-              <button id="close-quick-view" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-2xl font-bold">&times;</button>
-              <div id="quick-view-content">
-                <!-- Product details will be injected here -->
+          <!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <title>Redirecting…</title>
+              <meta http-equiv="refresh" content="0; url=./index.html">
+              <link rel="canonical" href="./index.html">
+              <style>body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#222;display:flex;align-items:center;justify-content:center;height:100vh;margin:0}a{color:#007acc}</style>
+            </head>
+            <body>
+              <div style="max-width:560px;text-align:center;padding:24px;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.08)">
+                <h1 style="margin:0 0 8px">Page moved</h1>
+                <p style="margin:0 0 12px">This page has been removed. Redirecting you to the homepage…</p>
+                <p style="margin:0"><a href="./index.html">Click here if you are not redirected</a></p>
               </div>
-            </div>
-          </div>
-          <!-- 1 -->
-          <div class="relative bg-gray-50 rounded-xl shadow-md p-4 flex flex-col items-center group" data-category="Maasai Jewelry">
-            <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">-17%</span>
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80" alt="Traditional Maasai Beaded Necklace" class="w-28 h-28 object-cover rounded mb-2 border-2 border-yellow-200 group-hover:scale-105 transition" />
-            <button class="absolute top-2 right-2 bg-yellow-600 text-white text-xs px-2 py-0.5 rounded shadow hover:bg-yellow-700 transition quick-view-btn">Quick View</button>
-            <div class="flex-1 flex flex-col justify-between w-full">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="text-yellow-700 font-bold text-sm">(24)</span>
-              </div>
-              <h2 class="text-base font-bold text-yellow-700 mb-1 text-center">Traditional Maasai Beaded Necklace</h2>
-              <p class="text-xs text-gray-600 mb-1 text-center">Handcrafted beaded necklace featuring traditional Maasai designs and patterns. Each color carries specific meaning in Maasai culture.</p>
-              <div class="flex items-center justify-center gap-2 mb-1">
-                <span class="text-yellow-700 font-bold text-lg">KSH 2,500</span>
-                <span class="text-gray-400 line-through text-sm">KSH 3,000</span>
-              </div>
-              <div class="text-green-600 text-xs mb-1 text-center">In Stock (15)</div>
-              <div class="flex gap-2 justify-center">
-                <button class="bg-yellow-600 text-black font-bold px-3 py-1 rounded hover:bg-yellow-700 transition text-xs">Add to Cart</button>
-                <a href="https://wa.me/?text=I'm%20interested%20in%20the%20Traditional%20Maasai%20Beaded%20Necklace" target="_blank" class="bg-green-500 text-white px-3 py-1 rounded text-xs font-bold hover:bg-green-600 transition">WhatsApp</a>
-              </div>
-            </div>
-          </div>
-          <!-- 2 -->
-          <div class="relative bg-gray-50 rounded-xl shadow-md p-4 flex flex-col items-center group" data-category="Maasai Jewelry">
-            <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">-18%</span>
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80" alt="Maasai Beaded Bracelet Set" class="w-28 h-28 object-cover rounded mb-2 border-2 border-yellow-200 group-hover:scale-105 transition" />
-            <button class="absolute top-2 right-2 bg-yellow-600 text-white text-xs px-2 py-0.5 rounded shadow hover:bg-yellow-700 transition">Quick View</button>
-            <div class="flex-1 flex flex-col justify-between w-full">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="text-yellow-700 font-bold text-sm">(18)</span>
-              </div>
-              <h2 class="text-base font-bold text-yellow-700 mb-1 text-center">Maasai Beaded Bracelet Set</h2>
-              <p class="text-xs text-gray-600 mb-1 text-center">Set of 3 authentic Maasai bracelets with vibrant traditional patterns.</p>
-              <div class="flex items-center justify-center gap-2 mb-1">
-                <span class="text-yellow-700 font-bold text-lg">KSH 1,800</span>
-                <span class="text-gray-400 line-through text-sm">KSH 2,200</span>
-              </div>
-              <div class="text-green-600 text-xs mb-1 text-center">In Stock (8)</div>
-              <div class="flex gap-2 justify-center">
-                <button class="bg-yellow-600 text-black font-bold px-3 py-1 rounded hover:bg-yellow-700 transition text-xs">Add to Cart</button>
-                <a href="https://wa.me/?text=I'm%20interested%20in%20the%20Maasai%20Beaded%20Bracelet%20Set" target="_blank" class="bg-green-500 text-white px-3 py-1 rounded text-xs font-bold hover:bg-green-600 transition">WhatsApp</a>
-              </div>
-            </div>
-          </div>
-          <!-- 3 -->
-          <div class="relative bg-gray-50 rounded-xl shadow-md p-4 flex flex-col items-center group" data-category="Maasai Jewelry">
-            <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">-20%</span>
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=300&q=80" alt="Maasai Beaded Drop Earrings" class="w-28 h-28 object-cover rounded mb-2 border-2 border-yellow-200 group-hover:scale-105 transition" />
-            <button class="absolute top-2 right-2 bg-yellow-600 text-white text-xs px-2 py-0.5 rounded shadow hover:bg-yellow-700 transition quick-view-btn">Quick View</button>
-            <div class="flex-1 flex flex-col justify-between w-full">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="text-yellow-700 font-bold text-sm">(15)</span>
-              </div>
-              <h2 class="text-base font-bold text-yellow-700 mb-1 text-center">Maasai Beaded Drop Earrings</h2>
-              <p class="text-xs text-gray-600 mb-1 text-center">Elegant drop earrings featuring traditional Maasai beadwork patterns.</p>
-              <div class="flex items-center justify-center gap-2 mb-1">
-                <span class="text-yellow-700 font-bold text-lg">KSH 1,200</span>
-                <span class="text-gray-400 line-through text-sm">KSH 1,500</span>
-              </div>
-              <div class="text-green-600 text-xs mb-1 text-center">In Stock (12)</div>
-              <div class="flex gap-2 justify-center">
-                <button class="bg-yellow-600 text-black font-bold px-3 py-1 rounded hover:bg-yellow-700 transition text-xs">Add to Cart</button>
-                <a href="https://wa.me/?text=I'm%20interested%20in%20the%20Maasai%20Beaded%20Drop%20Earrings" target="_blank" class="bg-green-500 text-white px-3 py-1 rounded text-xs font-bold hover:bg-green-600 transition">WhatsApp</a>
-              </div>
-            </div>
-          </div>
-          <!-- 4 -->
-          <div class="relative bg-gray-50 rounded-xl shadow-md p-4 flex flex-col items-center group" data-category="African Decor">
-            <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">-17%</span>
-            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=300&q=80" alt="Hand-carved African Wall Mask" class="w-28 h-28 object-cover rounded mb-2 border-2 border-yellow-200 group-hover:scale-105 transition" />
-            <button class="absolute top-2 right-2 bg-yellow-600 text-white text-xs px-2 py-0.5 rounded shadow hover:bg-yellow-700 transition">Quick View</button>
-            <div class="flex-1 flex flex-col justify-between w-full">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="text-yellow-700 font-bold text-sm">(8)</span>
-              </div>
-              <h2 class="text-base font-bold text-yellow-700 mb-1 text-center">Hand-carved African Wall Mask</h2>
-              <p class="text-xs text-gray-600 mb-1 text-center">Traditional wooden mask hand-carved by local artisans.</p>
-              <div class="flex items-center justify-center gap-2 mb-1">
-                <span class="text-yellow-700 font-bold text-lg">KSH 3,500</span>
-                <span class="text-gray-400 line-through text-sm">KSH 4,200</span>
-              </div>
-              <div class="text-green-600 text-xs mb-1 text-center">In Stock (5)</div>
-              <div class="flex gap-2 justify-center">
-                <button class="bg-yellow-600 text-black font-bold px-3 py-1 rounded hover:bg-yellow-700 transition text-xs">Add to Cart</button>
-                <a href="https://wa.me/?text=I'm%20interested%20in%20the%20Hand-carved%20African%20Wall%20Mask" target="_blank" class="bg-green-500 text-white px-3 py-1 rounded text-xs font-bold hover:bg-green-600 transition">WhatsApp</a>
-              </div>
-            </div>
-          </div>
-          <!-- 5 -->
-          <div class="relative bg-gray-50 rounded-xl shadow-md p-4 flex flex-col items-center group" data-category="African Decor">
-            <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">-17%</span>
-            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=300&q=80" alt="Kisii Soapstone Bowl" class="w-28 h-28 object-cover rounded mb-2 border-2 border-yellow-200 group-hover:scale-105 transition" />
-            <button class="absolute top-2 right-2 bg-yellow-600 text-white text-xs px-2 py-0.5 rounded shadow hover:bg-yellow-700 transition">Quick View</button>
-            <div class="flex-1 flex flex-col justify-between w-full">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="text-yellow-700 font-bold text-sm">(12)</span>
-              </div>
-              <h2 class="text-base font-bold text-yellow-700 mb-1 text-center">Kisii Soapstone Bowl</h2>
-              <p class="text-xs text-gray-600 mb-1 text-center">Beautiful hand-carved soapstone bowl from the Kisii region of Kenya.</p>
-              <div class="flex items-center justify-center gap-2 mb-1">
-                <span class="text-yellow-700 font-bold text-lg">KSH 3,000</span>
-                <span class="text-gray-400 line-through text-sm">KSH 3,600</span>
-              </div>
-              <div class="text-green-600 text-xs mb-1 text-center">In Stock (7)</div>
-              <div class="flex gap-2 justify-center">
-                <button class="bg-yellow-600 text-black font-bold px-3 py-1 rounded hover:bg-yellow-700 transition text-xs">Add to Cart</button>
-                <a href="https://wa.me/?text=I'm%20interested%20in%20the%20Kisii%20Soapstone%20Bowl" target="_blank" class="bg-green-500 text-white px-3 py-1 rounded text-xs font-bold hover:bg-green-600 transition">WhatsApp</a>
-              </div>
-            </div>
-          </div>
-          <!-- 6 -->
-          <div class="relative bg-gray-50 rounded-xl shadow-md p-4 flex flex-col items-center group" data-category="African Decor">
-            <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">-18%</span>
-            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=300&q=80" alt="Decorative Maasai Shield" class="w-28 h-28 object-cover rounded mb-2 border-2 border-yellow-200 group-hover:scale-105 transition" />
-            <button class="absolute top-2 right-2 bg-yellow-600 text-white text-xs px-2 py-0.5 rounded shadow hover:bg-yellow-700 transition">Quick View</button>
-            <div class="flex-1 flex flex-col justify-between w-full">
-              <div class="flex items-center gap-1 mb-1">
-                <span class="text-yellow-700 font-bold text-sm">(6)</span>
-              </div>
-              <h2 class="text-base font-bold text-yellow-700 mb-1 text-center">Decorative Maasai Shield</h2>
-              <p class="text-xs text-gray-600 mb-1 text-center">Authentic replica of traditional Maasai warrior shield.</p>
-              <div class="flex items-center justify-center gap-2 mb-1">
+            </body>
+          </html>
                 <span class="text-yellow-700 font-bold text-lg">KSH 4,500</span>
                 <span class="text-gray-400 line-through text-sm">KSH 5,500</span>
               </div>
