@@ -72,30 +72,17 @@
       </button>
       <ul id="nav-links" class="hidden sm:flex space-x-8 text-yellow-700 font-semibold text-base sm:text-lg bg-[#FFF8E7] sm:bg-transparent absolute sm:static top-16 left-0 w-full sm:w-auto z-40 sm:z-auto flex-col sm:flex-row border-b sm:border-0 border-yellow-100 sm:shadow-none shadow-lg">
         <li><a href="index.html#about" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">About</a></li>
-        <li class="relative" id="main-dropdown-parent">
-          <button class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition flex items-center gap-1" id="main-dropdown-btn" aria-haspopup="true" aria-expanded="false" tabindex="0">Top Attractions <svg class="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-          <ul class="absolute left-0 mt-2 w-56 bg-white border border-yellow-200 rounded-lg shadow-lg py-2 z-50 hidden" id="main-dropdown-menu">
-            <li><a href="index.html#attractions" class="block px-4 py-2 text-gray-800 hover:bg-yellow-100">All Attractions</a></li>
-            <li><a href="index.html#tours" class="block px-4 py-2 text-gray-800 hover:bg-yellow-100">Signature Tours</a></li>
-            <li><a href="index.html#museums" class="block px-4 py-2 text-gray-800 hover:bg-yellow-100">Museums</a></li>
-            <li><a href="index.html#gallery" class="block px-4 py-2 text-gray-800 hover:bg-yellow-100">Gallery</a></li>
-          </ul>
-        </li>
         <li><a href="index.html#contact" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Contact</a></li>
         <li><a href="packages.html" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Packages</a></li>
       </ul>
-      <!-- Desktop CTA: visible on sm+ -->
       <div class="hidden sm:flex items-center gap-3">
         <a href="https://wa.me/254712321342" target="_blank" class="px-4 py-2 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition">WhatsApp</a>
-        <a href="packages.html" class="px-3 py-2 text-sm font-semibold text-gray-800 hover:text-orange-500 transition">Packages</a>
       </div>
     </nav>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
-        const dropdownBtn = document.getElementById('main-dropdown-btn');
-        const dropdownMenu = document.getElementById('main-dropdown-menu');
         function closeMenu() {
           navLinks.classList.add('hidden');
         }
@@ -116,68 +103,10 @@
             navLinks.style.borderRadius = '';
           }
         });
-        // Dropdown logic (desktop and mobile)
-        if (dropdownBtn && dropdownMenu) {
-          // Desktop: show on hover (parent li, not just button)
-          const parent = document.getElementById('main-dropdown-parent');
-          let dropdownHover = false;
-          function showDropdown() {
-            if (window.innerWidth >= 640) {
-              dropdownMenu.classList.remove('hidden');
-              dropdownBtn.setAttribute('aria-expanded', 'true');
-            }
-          }
-          function hideDropdown() {
-            if (window.innerWidth >= 640 && !dropdownHover) {
-              dropdownMenu.classList.add('hidden');
-              dropdownBtn.setAttribute('aria-expanded', 'false');
-            }
-          }
-          parent.addEventListener('mouseenter', () => {
-            dropdownHover = true;
-            showDropdown();
-          });
-          parent.addEventListener('mouseleave', () => {
-            dropdownHover = false;
-            setTimeout(hideDropdown, 100); // slight delay for usability
-          });
-          dropdownMenu.addEventListener('mouseenter', () => {
-            dropdownHover = true;
-            showDropdown();
-          });
-          dropdownMenu.addEventListener('mouseleave', () => {
-            dropdownHover = false;
-            setTimeout(hideDropdown, 100);
-          });
-          // Mobile: toggle on click
-          dropdownBtn.addEventListener('click', function(e) {
-            if (window.innerWidth < 640) {
-              e.preventDefault();
-              const expanded = dropdownBtn.getAttribute('aria-expanded') === 'true';
-              dropdownBtn.setAttribute('aria-expanded', !expanded);
-              dropdownMenu.classList.toggle('hidden');
-            }
-          });
-        }
-        // Close menu when a link is clicked (mobile only)
         Array.from(navLinks.querySelectorAll('a')).forEach(link => {
           link.addEventListener('click', () => {
             if (window.innerWidth < 640) closeMenu();
           });
-        });
-        // Ensure menu is hidden on resize to desktop
-        window.addEventListener('resize', () => {
-          if (window.innerWidth >= 640) {
-            navLinks.classList.remove('hidden');
-            navLinks.classList.add('flex');
-            navLinks.style.background = '';
-            navLinks.style.boxShadow = '';
-            navLinks.style.borderRadius = '';
-            if (dropdownMenu) dropdownMenu.classList.add('hidden');
-            if (dropdownBtn) dropdownBtn.setAttribute('aria-expanded', 'false');
-          } else {
-            closeMenu();
-          }
         });
       });
     </script>
@@ -433,310 +362,7 @@
           </div>
         </section>
 
-        <!-- Major Museums (optimized) -->
-        <section id="museums" class="py-8 px-4 bg-gradient-to-br from-yellow-50 via-white to-green-50">
-          <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-6">
-              <h2 class="text-2xl md:text-3xl font-extrabold text-green-800 mb-2">Museums in Nairobi & Mombasa</h2>
-              <p class="text-sm md:text-base text-gray-700 max-w-2xl mx-auto">Explore Kenya's rich cultural heritage through world-class museums and historic sites.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <!-- Nairobi National Museum -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-green-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-green-400 to-green-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-green-800 mb-1">Nairobi National Museum</h3>
-                  <p class="text-xs text-gray-700 mb-2">Natural history, culture, and art exhibits.</p>
-                  <div class="flex items-center gap-2 text-xs text-gray-600">
-                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
-                    <span>Nairobi</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Karen Blixen Museum -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-yellow-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-yellow-300 to-yellow-500"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-yellow-700 mb-1">Karen Blixen Museum</h3>
-                  <p class="text-xs text-gray-700 mb-2">Home of the author of "Out of Africa".</p>
-                  <div class="flex items-center gap-2 text-xs text-gray-600">
-                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
-                    <span>Nairobi</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Railway Museum Nairobi -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-orange-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-orange-400 to-orange-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-orange-700 mb-1">Railway Museum</h3>
-                  <p class="text-xs text-gray-700 mb-2">Historic trains and the "Lunatic Express".</p>
-                  <div class="flex items-center gap-2 text-xs text-gray-600">
-                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
-                    <span>Nairobi</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Kenya National Archives -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-green-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-green-300 to-green-500"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-green-800 mb-1">Kenya National Archives</h3>
-                  <p class="text-xs text-gray-700 mb-2">History and photography on Moi Avenue.</p>
-                  <div class="flex items-center gap-2 text-xs text-gray-600">
-                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
-                    <span>Nairobi</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Bomas of Kenya -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-yellow-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-yellow-200 to-yellow-400"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-yellow-700 mb-1">Bomas of Kenya</h3>
-                  <p class="text-xs text-gray-700 mb-2">Traditional homesteads and live dances.</p>
-                  <div class="flex items-center gap-2 text-xs text-gray-600">
-                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
-                    <span>Nairobi</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Fort Jesus Museum -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-blue-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-blue-400 to-blue-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-blue-800 mb-1">Fort Jesus Museum</h3>
-                  <p class="text-xs text-gray-700 mb-2">UNESCO site of Mombasa's coastal history.</p>
-                  <div class="flex items-center gap-2 text-xs text-gray-600">
-                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
-                    <span>Mombasa</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Jumba la Mtwana Ruins -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-teal-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-teal-400 to-teal-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-teal-800 mb-1">Jumba la Mtwana Ruins</h3>
-                  <p class="text-xs text-gray-700 mb-2">Swahili settlement ruins north of Mombasa.</p>
-                  <div class="flex items-center gap-2 text-xs text-gray-600">
-                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
-                    <span>Mombasa</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Lamu Museum -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-purple-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-purple-400 to-purple-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-purple-800 mb-1">Lamu Museum</h3>
-                  <p class="text-xs text-gray-700 mb-2">Swahili culture and maritime history.</p>
-                  <div class="flex items-center gap-2 text-xs text-gray-600">
-                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
-                    <span>Lamu</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Gede Ruins Museum -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-indigo-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-indigo-400 to-indigo-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-indigo-800 mb-1">Gede Ruins Museum</h3>
-                  <p class="text-xs text-gray-700 mb-2">12th-century Swahili town near Watamu.</p>
-                  <div class="flex items-center gap-2 text-xs text-gray-600">
-                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
-                    <span>Watamu</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Attractions (redesigned) -->
-        <section id="attractions" class="py-8 px-4 bg-gradient-to-br from-green-50 via-white to-yellow-50">
-          <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-6">
-              <h2 class="text-2xl md:text-3xl font-extrabold text-yellow-700 mb-2">Top Attractions in Kenya</h2>
-              <p class="text-sm md:text-base text-gray-700 max-w-2xl mx-auto">Discover Kenya's most iconic destinations and natural wonders across diverse landscapes and regions.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <!-- Safari Reserves -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-orange-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-orange-400 to-orange-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-orange-700 mb-1">Masai Mara National Reserve</h3>
-                  <p class="text-xs text-gray-700 mb-2">Premier wildlife reserve, world-famous for the Great Migration.</p>
-                  <span class="inline-block text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full">Safari</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-amber-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-amber-400 to-amber-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-amber-700 mb-1">Amboseli National Park</h3>
-                  <p class="text-xs text-gray-700 mb-2">Mt. Kilimanjaro views and large elephant herds.</p>
-                  <span class="inline-block text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full">Safari</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-yellow-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-yellow-400 to-yellow-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-yellow-700 mb-1">Lake Nakuru National Park</h3>
-                  <p class="text-xs text-gray-700 mb-2">Flamingo gatherings and black rhino sanctuary.</p>
-                  <span class="inline-block text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Wildlife</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-red-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-red-400 to-red-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-red-700 mb-1">Tsavo East & West</h3>
-                  <p class="text-xs text-gray-700 mb-2">Vast wilderness and diverse wildlife species.</p>
-                  <span class="inline-block text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">Safari</span>
-                </div>
-              </div>
-
-              <!-- Mountains & Highlands -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-purple-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-purple-400 to-purple-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-purple-700 mb-1">Mount Kenya</h3>
-                  <p class="text-xs text-gray-700 mb-2">Africa's second-highest peak with hiking trails.</p>
-                  <span class="inline-block text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Adventure</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-blue-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-blue-400 to-blue-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-blue-700 mb-1">Aberdare National Park</h3>
-                  <p class="text-xs text-gray-700 mb-2">Forested highlands with wildlife and scenic views.</p>
-                  <span class="inline-block text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Nature</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-indigo-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-indigo-400 to-indigo-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-indigo-700 mb-1">Hell's Gate National Park</h3>
-                  <p class="text-xs text-gray-700 mb-2">Dramatic gorge and geothermal activities.</p>
-                  <span class="inline-block text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Adventure</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-teal-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-teal-400 to-teal-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-teal-700 mb-1">Samburu National Reserve</h3>
-                  <p class="text-xs text-gray-700 mb-2">Semi-arid landscape with unique wildlife species.</p>
-                  <span class="inline-block text-xs bg-teal-100 text-teal-800 px-2 py-1 rounded-full">Safari</span>
-                </div>
-              </div>
-
-              <!-- Beaches & Coastal -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-cyan-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-cyan-400 to-cyan-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-cyan-700 mb-1">Diani Beach</h3>
-                  <p class="text-xs text-gray-700 mb-2">White sand beaches and water sports paradise.</p>
-                  <span class="inline-block text-xs bg-cyan-100 text-cyan-800 px-2 py-1 rounded-full">Beach</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-sky-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-sky-400 to-sky-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-sky-700 mb-1">Watamu & Malindi</h3>
-                  <p class="text-xs text-gray-700 mb-2">Coastal charm with marine parks and coral reefs.</p>
-                  <span class="inline-block text-xs bg-sky-100 text-sky-800 px-2 py-1 rounded-full">Beach</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-fuchsia-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-fuchsia-400 to-fuchsia-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-fuchsia-700 mb-1">Lamu Old Town</h3>
-                  <p class="text-xs text-gray-700 mb-2">UNESCO heritage site with Swahili culture.</p>
-                  <span class="inline-block text-xs bg-fuchsia-100 text-fuchsia-800 px-2 py-1 rounded-full">Culture</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-rose-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-rose-400 to-rose-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-rose-700 mb-1">Kisite-Mpunguti Marine Park</h3>
-                  <p class="text-xs text-gray-700 mb-2">Pristine coral reefs and marine biodiversity.</p>
-                  <span class="inline-block text-xs bg-rose-100 text-rose-800 px-2 py-1 rounded-full">Marine</span>
-                </div>
-              </div>
-
-              <!-- Other Notable -->
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-lime-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-lime-400 to-lime-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-lime-700 mb-1">Nairobi National Park</h3>
-                  <p class="text-xs text-gray-700 mb-2">Urban wildlife with city skyline views.</p>
-                  <span class="inline-block text-xs bg-lime-100 text-lime-800 px-2 py-1 rounded-full">Wildlife</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-emerald-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-emerald-400 to-emerald-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-emerald-700 mb-1">Kakamega Forest</h3>
-                  <p class="text-xs text-gray-700 mb-2">Kenya's only tropical rainforest ecosystem.</p>
-                  <span class="inline-block text-xs bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full">Nature</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-green-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-green-400 to-green-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-green-700 mb-1">Shimba Hills</h3>
-                  <p class="text-xs text-gray-700 mb-2">Coastal forest with wildlife and scenic beauty.</p>
-                  <span class="inline-block text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Safari</span>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl shadow overflow-hidden border border-violet-100 hover:shadow-md transition-shadow duration-300">
-                <div class="h-20 bg-gradient-to-br from-violet-400 to-violet-600"></div>
-                <div class="p-3">
-                  <h3 class="text-base font-bold text-violet-700 mb-1">Lake Victoria</h3>
-                  <p class="text-xs text-gray-700 mb-2">Africa's largest freshwater lake with islands.</p>
-                  <span class="inline-block text-xs bg-violet-100 text-violet-800 px-2 py-1 rounded-full">Water</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-        <!-- Gallery Section -->
-        <section id="gallery" class="py-8 px-2 sm:px-4 bg-gradient-to-br from-green-100 via-white to-yellow-100">
-          <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-green-700 mb-6 text-center">Explore Our Safaris</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <img src="b2.jpg" alt="Diani Beach Kenya - white sand beach" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow transition-transform hover:scale-105 duration-300">
-              <img src="b3.jpg" alt="Kenya wildlife safari - giraffes and zebras" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow transition-transform hover:scale-105 duration-300">
-              <img src="wl.jpg" alt="Kenya safari wildlife - elephants" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow transition-transform hover:scale-105 duration-300">
-              <img src="wl2.jpg" alt="Kenya safari wildlife - lions" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow transition-transform hover:scale-105 duration-300">
-              <img src="wl3.jpg" alt="Kenya safari wildlife - cheetahs" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow transition-transform hover:scale-105 duration-300">
-              <img src="wl4.jpg" alt="Kenya safari wildlife - rhinos" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow transition-transform hover:scale-105 duration-300">
-              <img src="wl5.jpg" alt="Kenya safari wildlife - hippos" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow transition-transform hover:scale-105 duration-300">
-              <img src="wl6.jpg" alt="Kenya safari wildlife - flamingos" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow transition-transform hover:scale-105 duration-300">
-            </div>
-          </div>
-        </section>
+        <!-- Removed extended sections for a minimal landing experience -->
 
         <!-- Contact Section -->
         <section id="contact" class="py-16 px-2 sm:px-4 bg-gray-100 text-center">
@@ -814,15 +440,5 @@
     </div>
   </footer>
 
-  <script>
-    // Simple gallery slider
-    let current = 0;
-    const slides = document.querySelectorAll('.slider img');
-    setInterval(() => {
-      slides[current].style.display = "none";
-      current = (current + 1) % slides.length;
-      slides[current].style.display = "block";
-    }, 5000);
-  </script>
 </body>
 </html>

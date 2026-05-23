@@ -1,6 +1,6 @@
 # SafariPlug254 — Local Preview
 
-This is a simple static site for SafariPlug254 (renamed from Nomad Luxe Safaris).
+This is a simple static site for SafariPlug254.
 
 How to preview locally
 
