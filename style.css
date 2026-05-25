@@ -236,6 +236,27 @@ header a,
   font-weight: 500;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+  }
+
+  .hero p {
+    margin: 0.9rem auto 1.4rem;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    gap: 0.85rem;
+  }
+}
+
 .hero-buttons .btn {
   margin: 5px;
   padding: 10px 20px;
