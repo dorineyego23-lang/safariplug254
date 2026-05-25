@@ -4,339 +4,275 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Safari Packages – SafariPlug254</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body, .font-poppins { font-family: 'Poppins', Arial, sans-serif; }
-  </style>
+  <meta name="description" content="Explore Kenya safari packages and coastal escapes with SafariPlug254. Fast WhatsApp booking and tailored itineraries for Masai Mara, Amboseli, Diani, Watamu and more.">
   <link rel="icon" type="image/png" href="safariplug254.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Safari Packages – SafariPlug254">
+  <meta property="og:description" content="Explore Kenya safari packages and coastal escapades designed for easy booking.">
   <meta property="og:image" content="safariplug254.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="./packages.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Safari Packages – SafariPlug254">
+  <meta name="twitter:description" content="Explore Kenya safari packages and coastal escapes with SafariPlug254.">
   <meta name="twitter:image" content="safariplug254.png">
 </head>
-<body class="bg-[#FFF8E7] text-gray-900 font-poppins">
-  <header class="sticky top-0 z-50 bg-[#FFF8E7] shadow-lg">
-    <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4 bg-white">
-      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group hover:opacity-90 transition-opacity">
-        <img src="safariplug254.png" alt="SafariPlug254 Logo" class="h-16 sm:h-28 w-auto object-contain">
-        <div class="sm:hidden">
-          <h1 class="text-base font-extrabold text-gray-900 uppercase">SafariPlug254</h1>
-          <p class="text-xs text-gray-500 font-semibold tracking-wide">Kenya Safaris & Tours</p>
-        </div>
-        <div class="hidden sm:block">
-          <h1 class="text-xl sm:text-2xl font-black tracking-tight text-gray-900 uppercase"><span class="text-orange-600">Safari</span><span class="text-yellow-600">Plug</span><span class="text-green-700">254</span></h1>
-          <p class="text-xs text-gray-500 font-semibold tracking-wide">Kenya Safaris & Tours</p>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img class="logo-img" src="safariplug254.png" alt="SafariPlug254 logo">
+        <div>
+          <p class="brand-name">SafariPlug254</p>
+          <p class="brand-tag">Kenya Safaris & Tours</p>
         </div>
       </a>
-      <button id="menu-btn" class="sm:hidden flex items-center px-3 py-2 border rounded text-yellow-700 border-yellow-700 focus:outline-none" aria-label="Open Menu">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      <button class="menu-toggle" aria-label="Open navigation" id="menu-toggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
-      <ul id="nav-links" class="hidden sm:flex space-x-8 text-yellow-700 font-semibold text-base sm:text-lg bg-[#FFF8E7] sm:bg-transparent absolute sm:static top-16 left-0 w-full sm:w-auto z-40 sm:z-auto flex-col sm:flex-row border-b sm:border-0 border-yellow-100 sm:shadow-none shadow-lg">
-        <li><a href="index.html#about" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">About</a></li>
-        <li><a href="index.html#contact" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Contact</a></li>
-        <li><a href="packages.html" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Packages</a></li>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#packages">Packages</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
-      <div class="hidden sm:flex items-center gap-3">
-        <a href="https://wa.me/254712321342" target="_blank" class="px-4 py-2 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition">WhatsApp</a>
-      </div>
-    </nav>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const menuBtn = document.getElementById('menu-btn');
-        const navLinks = document.getElementById('nav-links');
-        function closeMenu() {
-          navLinks.classList.add('hidden');
-        }
-        function openMenu() {
-          navLinks.classList.remove('hidden');
-          navLinks.classList.add('flex');
-        }
-        menuBtn.addEventListener('click', () => {
-          if (navLinks.classList.contains('hidden')) {
-            openMenu();
-            navLinks.style.background = '#fff';
-            navLinks.style.boxShadow = '0 8px 32px rgba(0,0,0,0.12)';
-            navLinks.style.borderRadius = '0 0 1rem 1rem';
-          } else {
-            closeMenu();
-            navLinks.style.background = '';
-            navLinks.style.boxShadow = '';
-            navLinks.style.borderRadius = '';
-          }
-        });
-        Array.from(navLinks.querySelectorAll('a')).forEach(link => {
-          link.addEventListener('click', () => {
-            if (window.innerWidth < 640) closeMenu();
-          });
-        });
-      });
-    </script>
+      
+    </div>
   </header>
-  <main class="max-w-7xl mx-auto py-12 px-4">
-    <!-- Redesigned Hero -->
-    <section class="rounded-3xl bg-gradient-to-br from-yellow-100 via-white to-green-100 shadow-xl mb-10 py-12 px-6 text-center">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-orange-600 mb-3">Explore Our Safari & Coastal Packages</h1>
-      <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-4">Handpicked itineraries across Kenya — Masai Mara, Amboseli, Lake Nakuru and more. All packages can be tailored to your needs. Tour vehicle hire from <strong>$160</strong> per 3–4 hrs, with park entry fees added separately.</p>
-      <div class="flex flex-wrap justify-center gap-3 mt-3">
-        <a href="#packages-grid" class="px-5 py-3 bg-yellow-400 text-black font-bold rounded shadow hover:bg-yellow-500 transition">Browse Packages</a>
-        <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20would%20like%20to%20request%20a%20custom%20safari%20package." target="_blank" class="px-5 py-3 bg-green-600 text-white font-bold rounded shadow hover:bg-green-700 transition flex items-center gap-2 justify-center"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378 9.9 9.9 0 00-3.35 3.494 9.86 9.86 0 00-.75 4.75c0 5.495 4.467 9.964 9.962 9.964h.005c1.466 0 2.887-.235 4.24-.706a9.87 9.87 0 003.355-2.07 9.844 9.844 0 002.24-3.274 9.856 9.856 0 00.945-4.184c0-5.494-4.467-9.963-9.962-9.963z"/></svg>Request Custom Quote</a>
-      </div>
-    </section>
-
-    <!-- Pricing Summary -->
-    <section class="mb-10 bg-white rounded-3xl shadow-xl p-6">
-      <div class="grid gap-6 lg:grid-cols-3">
-        <div class="rounded-3xl bg-yellow-50 p-5 border border-yellow-200">
-          <h2 class="text-xl font-bold text-yellow-700 mb-3">Vehicle Hire</h2>
-          <p class="text-sm text-gray-700 leading-7">Standard 4x4 safari vehicle with driver, fuel, and guide.</p>
-          <ul class="mt-4 space-y-2 text-sm text-gray-700">
-            <li>• Half day (3–4 hrs): <strong>$160</strong></li>
-            <li>• Full day (8 hrs): <strong>$280</strong></li>
-            <li>• Multi-day rate (per day): <strong>$250</strong></li>
-          </ul>
-        </div>
-        <div class="rounded-3xl bg-green-50 p-5 border border-green-200">
-          <h2 class="text-xl font-bold text-green-700 mb-3">Entry Fees</h2>
-          <ul class="space-y-2 text-sm text-gray-700">
-            <li>• Amboseli: Resident <strong>KES 2,025</strong> · East African <strong>KES 1,500</strong> · Non-Res <strong>USD 90</strong></li>
-            <li>• Lake Nakuru: Resident <strong>KES 2,025</strong> · East African <strong>KES 1,500</strong> · Non-Res <strong>USD 90</strong></li>
-            <li>• Masai Mara: East African <strong>KES 1,500</strong> · Non-Res <strong>USD 100–200</strong></li>
-          </ul>
-        </div>
-        <div class="rounded-3xl bg-blue-50 p-5 border border-blue-200">
-          <h2 class="text-xl font-bold text-blue-700 mb-3">Package Notes</h2>
-          <p class="text-sm text-gray-700 leading-7">All rates exclude park entry fees and accommodations. Custom itineraries are available for groups, families, and special events.</p>
-          <p class="text-sm text-gray-700 mt-4"><strong>Book via WhatsApp</strong> for exact availability and seasonal pricing.</p>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="section-subtitle">Explore Kenya Packages</p>
+        <h1>Clean, modern safari and coastal packages for every traveller.</h1>
+        <p class="section-copy">From Masai Mara game drives to Diani Beach escapes, choose ready-made tours with clear pricing and quick WhatsApp booking.</p>
+        <div class="hero-actions">
+          <a class="button btn-primary" href="#packages-grid">View Packages</a>
+          <a class="button btn-secondary" href="https://wa.me/254712321342?text=Hello%20SafariPlug254%2C%20I%20would%20like%20a%20custom%20package." target="_blank">Custom Quote</a>
         </div>
       </div>
     </section>
-
-    <!-- Packages Grid -->
-    <section id="packages-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Card: Masai Mara -->
-      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-yellow-100" data-category="safari">
-        <img src="b2.jpg" alt="Masai Mara" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <div class="flex items-start justify-between gap-3">
-            <h3 class="text-lg font-extrabold text-yellow-700">Masai Mara — Day Safari</h3>
-            <span class="text-sm font-bold bg-yellow-400 text-black px-3 py-1 rounded-full">From USD 100</span>
-          </div>
-          <p class="text-sm text-gray-700 mt-2">Game drives, Big Five sightings, seasonal Great Migration (Jul–Oct).</p>
-          <ul class="text-sm text-gray-600 mt-3 space-y-1">
-            <li>• Entry: East African KES 1,500 · Non-Res USD 100–200 (seasonal)</li>
-            <li>• Vehicle hire: $160 (3–4 hrs half-day)</li>
-            <li>• Multi-day bookings: Inquire for custom pricing</li>
-          </ul>
-          <div class="mt-4">
-            <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20want%20to%20book%20Masai%20Mara%20-%20Day%20Safari." target="_blank" class="inline-block px-5 py-3 bg-yellow-400 text-black font-bold rounded-lg">Book Now</a>
-          </div>
+    <section class="section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <p class="section-subtitle">Pricing Summary</p>
+          <h2 class="section-title">Simple package pricing you can trust.</h2>
         </div>
-      </article>
-
-      <!-- Card: Tsavo East & West -->
-      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-green-100" data-category="safari">
-        <img src="b2.jpg" alt="Tsavo East and West" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <div class="flex items-start justify-between gap-3">
-            <h3 class="text-lg font-extrabold text-green-700">Tsavo East & West — Wild Safari</h3>
-            <span class="text-sm font-bold bg-green-200 text-green-900 px-3 py-1 rounded-full">From KES 1,000</span>
-          </div>
-          <p class="text-sm text-gray-700 mt-2">Vast wilderness, red elephants, and rich safari terrain.</p>
-          <ul class="text-sm text-gray-600 mt-3 space-y-1">
-            <li>• Entry: Resident KES 1,350 | E.African KES 1,000 | Non-Res USD 80</li>
-            <li>• Vehicle hire: $160 (3–4 hrs half-day)</li>
-            <li>• Multi-day and lodge stays available</li>
-          </ul>
-          <div class="mt-4">
-            <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20want%20to%20book%20Tsavo%20East%20%26%20West%20-%20Wild%20Safari." target="_blank" class="inline-block px-5 py-3 bg-green-600 text-white font-bold rounded-lg">Book Now</a>
-          </div>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Vehicle Hire</span>
+              <h3 class="card-title">4x4 Safari Transport</h3>
+              <p class="card-copy">Standard safari vehicle with fuel, driver and guide. Half-day from USD 160, full-day from USD 280.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Entry Fees</span>
+              <h3 class="card-title">Official Park Fees</h3>
+              <p class="card-copy">Kenyan citizen/resident prices are typically KES 450–1,500. Non-resident visitor fees are usually USD 40–80 depending on the park.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Booking</span>
+              <h3 class="card-title">Flexible Itineraries</h3>
+              <p class="card-copy">Customise any package, add nights or build a tailor-made safari with clear planning support.</p>
+            </div>
+          </article>
         </div>
-      </article>
-
-      <!-- Card: Diani Beach -->
-      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-cyan-100" data-category="coast">
-        <img src="b3.jpg" alt="Diani Beach" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <div class="flex items-start justify-between gap-3">
-            <h3 class="text-lg font-extrabold text-cyan-700">Diani Beach — Coastal Escape</h3>
-            <span class="text-sm font-bold bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full">From USD 120</span>
-          </div>
-          <p class="text-sm text-gray-700 mt-2">White sand beaches, water sports, and relaxed coastal luxury.</p>
-          <ul class="text-sm text-gray-600 mt-3 space-y-1">
-            <li>• Beach resort transfers & day tours</li>
-            <li>• Snorkeling, sailing, and marine safaris</li>
-            <li>• Custom stays on the South Coast</li>
-          </ul>
-          <div class="mt-4">
-            <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20want%20to%20book%20Diani%20Beach%20-%20Coastal%20Escape." target="_blank" class="inline-block px-5 py-3 bg-cyan-600 text-white font-bold rounded-lg">Book Now</a>
-          </div>
+      </div>
+    </section>
+    <section class="section" id="packages-grid">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <p class="section-subtitle">Package Choices</p>
+          <h2 class="section-title">Choose your next Kenya adventure.</h2>
         </div>
-      </article>
-
-      <!-- Card: Watamu & Malindi -->
-      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-sky-100" data-category="coast">
-        <img src="b2.jpg" alt="Watamu and Malindi" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <div class="flex items-start justify-between gap-3">
-            <h3 class="text-lg font-extrabold text-sky-700">Watamu & Malindi — Marine Safari</h3>
-            <span class="text-sm font-bold bg-sky-100 text-sky-800 px-3 py-1 rounded-full">From USD 110</span>
-          </div>
-          <p class="text-sm text-gray-700 mt-2">Coral reefs, snorkeling, and coastal wildlife around Malindi Marine Park.</p>
-          <ul class="text-sm text-gray-600 mt-3 space-y-1">
-            <li>• Marine park day trips</li>
-            <li>• Snorkeling, crab shacks & beach lodges</li>
-            <li>• Personalized diving and fishing excursions</li>
-          </ul>
-          <div class="mt-4">
-            <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20want%20to%20book%20Watamu%20%26%20Malindi%20-%20Marine%20Safari." target="_blank" class="inline-block px-5 py-3 bg-sky-600 text-white font-bold rounded-lg">Book Now</a>
-          </div>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Safari</span>
+              <h3 class="card-title">Masai Mara Day Safari</h3>
+              <p class="card-copy">Game drives, Big Five viewing and Mara plains in a compact day package.</p>
+              <ul class="card-copy">
+                <li>Entry fees from KES 2,060 (citizens) / USD 70 (non-residents)</li>
+                <li>Vehicle hire from USD 160</li>
+                <li>Perfect for a one-day wildlife adventure</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20the%20Masai%20Mara%20Day%20Safari." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Safari</span>
+              <h3 class="card-title">Amboseli Half/Full Day</h3>
+              <p class="card-copy">Mt. Kilimanjaro views, elephant herds and wetlands in a short safari format.</p>
+              <ul class="card-copy">
+                <li>Entry fees from KES 1,500 (citizens) / USD 70 (non-residents)</li>
+                <li>Vehicle hire from USD 160</li>
+                <li>Great for short stays and layovers</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Amboseli%20Half%20Full%20Day." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Safari</span>
+              <h3 class="card-title">Lake Nakuru Day Trip</h3>
+              <p class="card-copy">Flamingos, rhinos and scenic lakeside drives in one easy package.</p>
+              <ul class="card-copy">
+                <li>Entry fees from KES 1,500 (citizens) / USD 60 (non-residents)</li>
+                <li>Vehicle hire from USD 160</li>
+                <li>Perfect for nature and birdwatching</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Lake%20Nakuru%20Day%20Trip." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Safari</span>
+              <h3 class="card-title">Nairobi National Park</h3>
+              <p class="card-copy">A convenient city safari with wildlife, views of Nairobi and easy single-day booking.</p>
+              <ul class="card-copy">
+                <li>Entry fees from KES 450 (citizens) / USD 50 (non-residents)</li>
+                <li>Perfect for arrivals and quick wildlife experiences</li>
+                <li>Includes transport options from Nairobi</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Nairobi%20National%20Park." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Safari</span>
+              <h3 class="card-title">Samburu National Reserve</h3>
+              <p class="card-copy">Northern Kenya safari reserve known for rare wildlife and rugged landscapes.</p>
+              <ul class="card-copy">
+                <li>Entry fees from KES 1,500 (citizens) / USD 70 (non-residents)</li>
+                <li>Full-day game drives included</li>
+                <li>Great for photo safaris and rare species</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Samburu%20National%20Reserve." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Safari</span>
+              <h3 class="card-title">Tsavo East & West Safari</h3>
+              <p class="card-copy">Visit both Tsavo East and West for broad game drives, dramatic red terrain and wildlife-rich plains.</p>
+              <ul class="card-copy">
+                <li>Quote from USD 220</li>
+                <li>Expert guide and park support</li>
+                <li>Ideal for a full-day safari experience</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Tsavo%20East%20%26%20West%20Safari." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Coastal</span>
+              <h3 class="card-title">Diani Beach Escape</h3>
+              <p class="card-copy">Beach transfers, water activities and relaxed luxury on Kenya's south coast.</p>
+              <ul class="card-copy">
+                <li>From USD 120</li>
+                <li>Snorkeling and marine tours</li>
+                <li>Ideal for couples and families</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Diani%20Beach%20Escape." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Coastal</span>
+              <h3 class="card-title">Watamu & Malindi Tour</h3>
+              <p class="card-copy">Coral reefs, marine park visits and beachside culture in a relaxed north coast package.</p>
+              <ul class="card-copy">
+                <li>From USD 110</li>
+                <li>Snorkeling and marine park visits</li>
+                <li>Great for beach lovers and snorkelers</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Watamu%20Malindi%20Tour." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Adventure</span>
+              <h3 class="card-title">Hell's Gate Adventure</h3>
+              <p class="card-copy">Cycling, hiking and red-rock scenery inside a dramatic national park.</p>
+              <ul class="card-copy">
+                <li>Entry fees from KES 500</li>
+                <li>Guide-led walking and cycling</li>
+                <li>Perfect for active day trips</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Hells%20Gate%20Adventure." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Wildlife</span>
+              <h3 class="card-title">Giraffe Centre Experience</h3>
+              <p class="card-copy">Meet Rothschild giraffes near Nairobi and enjoy a close wildlife experience with feeding and conservation insights.</p>
+              <ul class="card-copy">
+                <li>Entry from KES 500 per person</li>
+                <li>Transfer and guide options available</li>
+                <li>Great for families and day trips</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20the%20Giraffe%20Centre%20Experience." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
         </div>
-      </article>
-
-      <!-- Card: Nairobi National Park -->
-      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-lime-100" data-category="safari">
-        <img src="b3.jpg" alt="Nairobi National Park" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <div class="flex items-start justify-between gap-3">
-            <h3 class="text-lg font-extrabold text-lime-700">Nairobi National Park — Urban Safari</h3>
-            <span class="text-sm font-bold bg-lime-100 text-lime-800 px-3 py-1 rounded-full">From KES 1,000</span>
-          </div>
-          <p class="text-sm text-gray-700 mt-2">City-adjacent game drives with lions, giraffes, and buffalo against the Nairobi skyline.</p>
-          <ul class="text-sm text-gray-600 mt-3 space-y-1">
-            <li>• Entry: Resident KES 1,350 | E.African KES 1,000 | Non-Res USD 80</li>
-            <li>• Vehicle hire: $160 (3–4 hrs half-day)</li>
-            <li>• Ideal for layovers and quick day trips</li>
-          </ul>
-          <div class="mt-4">
-            <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20want%20to%20book%20Nairobi%20National%20Park%20-%20Urban%20Safari." target="_blank" class="inline-block px-5 py-3 bg-lime-600 text-white font-bold rounded-lg">Book Now</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card: Giraffe Centre -->
-      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-yellow-100" data-category="wildlife">
-        <img src="b2.jpg" alt="Giraffe Centre" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <div class="flex items-start justify-between gap-3">
-            <h3 class="text-lg font-extrabold text-yellow-700">Giraffe Centre — Wildlife Experience</h3>
-            <span class="text-sm font-bold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">From KES 500</span>
-          </div>
-          <p class="text-sm text-gray-700 mt-2">Meet Rothschild giraffes, feed them by hand, and enjoy a close wildlife experience near Nairobi.</p>
-          <ul class="text-sm text-gray-600 mt-3 space-y-1">
-            <li>• Entry: Approx. KES 500 per person</li>
-            <li>• Transfer and guide packages available</li>
-            <li>• Great for families and day tours</li>
-          </ul>
-          <div class="mt-4">
-            <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20want%20to%20book%20the%20Giraffe%20Centre%20Wildlife%20Experience." target="_blank" class="inline-block px-5 py-3 bg-yellow-400 text-black font-bold rounded-lg">Book Now</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card: Hell's Gate -->
-      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-orange-100" data-category="safari">
-        <img src="b3.jpg" alt="Hell's Gate National Park" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <div class="flex items-start justify-between gap-3">
-            <h3 class="text-lg font-extrabold text-orange-700">Hell's Gate — Adventure Park</h3>
-            <span class="text-sm font-bold bg-orange-200 text-orange-900 px-3 py-1 rounded-full">From KES 500</span>
-          </div>
-          <p class="text-sm text-gray-700 mt-2">Hiking, cycling, and dramatic gorges in one of Kenya’s most adventurous parks.</p>
-          <ul class="text-sm text-gray-600 mt-3 space-y-1">
-            <li>• Entry: Resident KES 675 | E.African KES 500 | Non-Res USD 50</li>
-            <li>• Vehicle hire: $160 (3–4 hrs half-day)</li>
-            <li>• Perfect for active day trips and cycling tours</li>
-          </ul>
-          <div class="mt-4">
-            <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20want%20to%20book%20Hell's%20Gate%20Adventure%20Park." target="_blank" class="inline-block px-5 py-3 bg-orange-600 text-white font-bold rounded-lg">Book Now</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Package cards end -->
-      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-green-100" data-category="safari">
-        <img src="b3.jpg" alt="Amboseli" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <div class="flex items-start justify-between gap-3">
-            <h3 class="text-lg font-extrabold text-green-700">Amboseli — Half/Full Day</h3>
-            <span class="text-sm font-bold bg-green-200 text-green-900 px-3 py-1 rounded-full">From KES 1,500</span>
-          </div>
-          <p class="text-sm text-gray-700 mt-2">Iconic views of Mt. Kilimanjaro, elephants, and birdlife.</p>
-          <ul class="text-sm text-gray-600 mt-3 space-y-1">
-            <li>• Entry: Resident KES 2,025 | E.African KES 1,500 | Non-Res USD 90</li>
-            <li>• Vehicle hire: $160 (3–4 hrs half-day)</li>
-            <li>• Photography paradise</li>
-          </ul>
-          <div class="mt-4">
-            <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20want%20to%20book%20Amboseli%20-%20Half/Full%20Day." target="_blank" class="inline-block px-5 py-3 bg-green-600 text-white font-bold rounded-lg">Book Now</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card: Lake Nakuru -->
-      <article class="package-card bg-white rounded-2xl shadow-lg overflow-hidden border border-yellow-100" data-category="safari">
-        <img src="b3.jpg" alt="Lake Nakuru" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <div class="flex items-start justify-between gap-3">
-            <h3 class="text-lg font-extrabold text-yellow-700">Lake Nakuru — Day Trip</h3>
-            <span class="text-sm font-bold bg-yellow-400 text-black px-3 py-1 rounded-full">From KES 1,500</span>
-          </div>
-          <p class="text-sm text-gray-700 mt-2">Flamingos, rhinos and scenic lakeside views.</p>
-          <ul class="text-sm text-gray-600 mt-3 space-y-1">
-            <li>• Entry: Resident KES 2,025 | E.African KES 1,500 | Non-Res USD 90</li>
-            <li>• Vehicle hire: $160 (3–4 hrs half-day)</li>
-            <li>• Birdwatching hotspot</li>
-          </ul>
-          <div class="mt-4">
-            <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20want%20to%20book%20Lake%20Nakuru%20-%20Day%20Trip." target="_blank" class="inline-block px-5 py-3 bg-yellow-400 text-black font-bold rounded-lg">Book Now</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Package cards end -->
-
+      </div>
     </section>
   </main>
-  <footer class="bg-gradient-to-r from-green-700 via-green-600 to-green-700 text-white py-8 mt-16 font-poppins">
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Main Footer Content -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-        <!-- Brand & Info -->
-        <div class="text-center md:text-left">
-          <h3 class="font-extrabold text-lg mb-2"><span class="text-yellow-300">Safari</span><span class="text-green-200">Plug</span><span class="text-white">254</span></h3>
-          <p class="text-green-100 text-sm">Kenya safaris & cultural tours</p>
-          <p class="text-green-200 text-xs mt-1">Nairobi, Kenya</p>
-        </div>
-        
-        <!-- Contact Info -->
-        <div class="text-center">
-          <h4 class="font-bold text-sm mb-2 text-yellow-300">Contact</h4>
-          <p class="text-green-100 text-xs mb-1"><strong>WhatsApp:</strong> <a href="https://wa.me/254712321342" target="_blank" class="text-yellow-300 hover:text-yellow-100">+254 712 321 342</a></p>
-          <p class="text-green-100 text-xs"><strong>Email:</strong> <a href="mailto:ianyy446@gmail.com" class="text-yellow-300 hover:text-yellow-100">ianyy446@gmail.com</a></p>
-        </div>
-        
-        <!-- Quick Links -->
-        <div class="text-center md:text-right">
-          <h4 class="font-bold text-sm mb-2 text-yellow-300">Quick Links</h4>
-          <div class="flex flex-wrap justify-center md:justify-end gap-3 text-xs">
-            <a href="index.html#about" class="text-green-100 hover:text-yellow-300 transition">About</a>
-            <a href="packages.html" class="text-green-100 hover:text-yellow-300 transition">Packages</a>
-            <a href="index.html#contact" class="text-green-100 hover:text-yellow-300 transition">Contact</a>
-          </div>
-        </div>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SafariPlug254</h3>
+        <p>A clean collection of Kenya safari and coastal packages with easy booking.</p>
       </div>
-      
-      <!-- Divider -->
-      <div class="border-t border-green-500 pt-4">
-        <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-green-100">
-          <p>&copy; 2025 SafariPlug254. All rights reserved.</p>
-          <div class="flex gap-4 mt-3 sm:mt-0">
-            <a href="https://wa.me/254712321342" target="_blank" aria-label="WhatsApp" class="hover:text-yellow-300 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.22-1.44l-.37-.22-3.67.96.98-3.58-.24-.37A9.94 9.94 0 0 1 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.6c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.62-.47-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.34-.26.27-1 1-1 2.44s1.02 2.83 1.16 3.03c.14.2 2.01 3.08 4.88 4.2.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg></a>
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-yellow-300 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5.006 3.676 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.324 21.128 22 17.006 22 12z"/></svg></a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-yellow-300 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 2.25a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 1.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm5.25 1.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg></a>
-          </div>
-        </div>
+      <div>
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="packages.html">Packages</a></p>
+        <p><a href="index.html#contact">Contact</a></p>
+      </div>
+      <div>
+        <h3>Follow & Connect</h3>
+        <p><a href="https://wa.me/254712321342" target="_blank">WhatsApp</a></p>
+        <p><a href="https://facebook.com/safariplug254" target="_blank">Facebook</a></p>
+        <p><a href="https://instagram.com/safariplug254" target="_blank">Instagram</a></p>
+        <p><a href="https://tiktok.com/@safariplug254" target="_blank">TikTok</a></p>
       </div>
     </div>
+    <p class="footer-note">&copy; 2026 SafariPlug254. All rights reserved.</p>
   </footer>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>

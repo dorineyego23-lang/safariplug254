@@ -1,32 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Fonts: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body, .font-poppins { font-family: 'Poppins', Arial, sans-serif; }
-  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SafariPlug254 – Kenya | Safaris, Tours & Packages</title>
-  <meta name="description" content="SafariPlug254 offers safaris, beach trips, and cultural tours across Kenya. Explore Masai Mara, Amboseli, Diani, and more. Custom and group safari packages available.">
+  <title>SafariPlug254 – Kenya Safaris, Tours & Packages</title>
+  <meta name="description" content="SafariPlug254 offers safaris, coastal escapes and cultural tours across Kenya. Explore Masai Mara, Amboseli, Diani, and more with easy WhatsApp booking.">
   <meta name="keywords" content="Kenya safaris, safari Kenya, Masai Mara tours, Amboseli safari, Diani Beach, Kenya tour packages, Nairobi National Park, African safari, Kenya travel, SafariPlug254">
   <meta name="author" content="SafariPlug254">
   <link rel="icon" type="image/png" href="safariplug254.png">
-  <link rel="canonical" href="https://www.nomadluxe.co.ke/">
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="SafariPlug254 – Kenya | Safaris, Tours & Packages">
-  <meta property="og:description" content="SafariPlug254 — safaris, coastal escapes and cultural tours across Kenya. Book your trip today.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:title" content="SafariPlug254 – Kenya Safaris, Tours & Packages">
+  <meta property="og:description" content="SafariPlug254 offers safaris, coastal escapes and cultural tours across Kenya. Book your next adventure today.">
   <meta property="og:image" content="safariplug254.png">
-  <meta property="og:url" content="/">
   <meta property="og:type" content="website">
-  <!-- Twitter Card -->
+  <meta property="og:url" content="./">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SafariPlug254 – Kenya | Safaris, Tours & Packages">
-  <meta name="twitter:description" content="SafariPlug254 — safaris, coastal escapes and cultural tours across Kenya.">
+  <meta name="twitter:title" content="SafariPlug254 – Kenya Safaris, Tours & Packages">
+  <meta name="twitter:description" content="SafariPlug254 offers safaris, coastal escapes and cultural tours across Kenya.">
   <meta name="twitter:image" content="safariplug254.png">
-  <!-- Structured Data: Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,395 +44,285 @@
     ]
   }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#FFF8E7] text-gray-900">
-  <!-- Header & Navigation -->
-  <header class="sticky top-0 z-50 bg-[#FFF8E7] shadow-lg">
-    <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4 bg-white">
-      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group hover:opacity-90 transition-opacity">
-        <img src="safariplug254.png" alt="SafariPlug254 Logo" class="h-16 sm:h-28 w-auto object-contain">
-        <div class="sm:hidden">
-          <h1 class="text-base font-extrabold text-gray-900 uppercase">SafariPlug254</h1>
-          <p class="text-xs text-gray-500 font-semibold tracking-wide">Kenya Safaris & Tours</p>
-        </div>
-        <div class="hidden sm:block">
-          <h1 class="text-xl sm:text-2xl font-black tracking-tight text-gray-900 uppercase"><span class="text-orange-600">Safari</span><span class="text-yellow-600">Plug</span><span class="text-green-700">254</span></h1>
-          <p class="text-xs text-gray-500 font-semibold tracking-wide">Kenya Safaris & Tours</p>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img class="logo-img" src="safariplug254.png" alt="SafariPlug254 logo">
+        <div>
+          <p class="brand-name">SafariPlug254</p>
+          <p class="brand-tag">Kenya Safaris & Tours</p>
         </div>
       </a>
-      <button id="menu-btn" class="sm:hidden flex items-center px-3 py-2 border rounded text-yellow-700 border-yellow-700 focus:outline-none" aria-label="Open Menu">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      <button class="menu-toggle" aria-label="Open navigation" id="menu-toggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
-      <ul id="nav-links" class="hidden sm:flex space-x-8 text-yellow-700 font-semibold text-base sm:text-lg bg-[#FFF8E7] sm:bg-transparent absolute sm:static top-16 left-0 w-full sm:w-auto z-40 sm:z-auto flex-col sm:flex-row border-b sm:border-0 border-yellow-100 sm:shadow-none shadow-lg">
-        <li><a href="index.html#about" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">About</a></li>
-        <li><a href="index.html#contact" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Contact</a></li>
-        <li><a href="packages.html" class="block px-6 py-3 sm:p-0 text-gray-800 hover:text-orange-500 hover:underline underline-offset-8 transition">Packages</a></li>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="hidden sm:flex items-center gap-3">
-        <a href="https://wa.me/254712321342" target="_blank" class="px-4 py-2 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition">WhatsApp</a>
-      </div>
-    </nav>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const menuBtn = document.getElementById('menu-btn');
-        const navLinks = document.getElementById('nav-links');
-        function closeMenu() {
-          navLinks.classList.add('hidden');
-        }
-        function openMenu() {
-          navLinks.classList.remove('hidden');
-          navLinks.classList.add('flex');
-        }
-        menuBtn.addEventListener('click', () => {
-          if (navLinks.classList.contains('hidden')) {
-            openMenu();
-            navLinks.style.background = '#fff';
-            navLinks.style.boxShadow = '0 8px 32px rgba(0,0,0,0.12)';
-            navLinks.style.borderRadius = '0 0 1rem 1rem';
-          } else {
-            closeMenu();
-            navLinks.style.background = '';
-            navLinks.style.boxShadow = '';
-            navLinks.style.borderRadius = '';
-          }
-        });
-        Array.from(navLinks.querySelectorAll('a')).forEach(link => {
-          link.addEventListener('click', () => {
-            if (window.innerWidth < 640) closeMenu();
-          });
-        });
-      });
-    </script>
-  </header>
-  <!-- removed duplicate nav script -->
-
-        <!-- Hero Section -->
-        <section class="relative flex flex-col items-center justify-center min-h-[70vh] bg-cover bg-center text-white text-center" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('image.webp');">
-          <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">SafariPlug254 – Kenya</h1>
-          <p class="text-lg md:text-2xl mb-8 font-medium drop-shadow">Safaris, beach escapes and cultural tours across Kenya. We make travel simple.</p>
-          <div class="flex flex-wrap gap-4 justify-center">
-            <a href="tel:+254712321342" class="px-6 py-3 bg-orange-600 text-white font-bold rounded shadow hover:bg-orange-700 transition">Call Us</a>
-            <a href="https://wa.me/254712321342" target="_blank" class="px-6 py-3 bg-green-600 text-white font-bold rounded shadow hover:bg-green-700 transition">WhatsApp</a>
-            <a href="packages.html" class="px-6 py-3 bg-yellow-400 text-black font-bold rounded shadow hover:bg-yellow-500 transition">View Packages</a>
-          </div>
-        </section>
-
-        <!-- About Us Section (compact) -->
-        <section id="about" class="py-6 px-4 bg-gradient-to-br from-green-50 to-yellow-50">
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-extrabold text-green-800 mb-3 text-center">About SafariPlug254</h2>
-            <p class="text-sm md:text-base text-gray-700 mb-4 max-w-3xl mx-auto text-center">Delivering exceptional safari experiences tailored to your preferences. Luxury, adventure, and cultural tours across Kenya with trusted local partners and 24/7 support.</p>
-            
-            <!-- Compact feature grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
-              <!-- Feature 1 -->
-              <div class="bg-white rounded-lg p-3 shadow-sm flex gap-2 items-start border-l-4 border-green-600">
-                <svg class="w-6 h-6 text-green-700 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 11l4-4 8 8 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div>
-                  <h4 class="font-semibold text-sm text-green-800">Expert Guides</h4>
-                  <p class="text-xs text-gray-600">Experienced local guides for authentic wildlife encounters.</p>
-                </div>
-              </div>
-              
-              <!-- Feature 2 -->
-              <div class="bg-white rounded-lg p-3 shadow-sm flex gap-2 items-start border-l-4 border-yellow-500">
-                <svg class="w-6 h-6 text-yellow-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 3v18m9-9H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div>
-                  <h4 class="font-semibold text-sm text-green-800">Custom Itineraries</h4>
-                  <p class="text-xs text-gray-600">Tailored packages for every budget and travel style.</p>
-                </div>
-              </div>
-              
-              <!-- Feature 3 -->
-              <div class="bg-white rounded-lg p-3 shadow-sm flex gap-2 items-start border-l-4 border-orange-500">
-                <svg class="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 8v4l3 2M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div>
-                  <h4 class="font-semibold text-sm text-green-800">24/7 Support</h4>
-                  <p class="text-xs text-gray-600">Round-the-clock assistance during your journey.</p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Compact CTA buttons -->
-            <div class="flex flex-wrap gap-2 justify-center">
-              <a href="packages.html" class="px-4 py-2 bg-yellow-400 text-black font-semibold text-sm rounded hover:bg-yellow-500 transition">Explore Packages</a>
-              <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20would%20like%20to%20request%20a%20custom%20safari%20quote." target="_blank" class="px-4 py-2 bg-green-600 text-white font-semibold text-sm rounded hover:bg-green-700 transition flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378 9.9 9.9 0 00-3.35 3.494 9.86 9.86 0 00-.75 4.75c0 5.495 4.467 9.964 9.962 9.964h.005c1.466 0 2.887-.235 4.24-.706a9.87 9.87 0 003.355-2.07 9.844 9.844 0 002.24-3.274 9.856 9.856 0 00.945-4.184c0-5.494-4.467-9.963-9.962-9.963z"/></svg>Get Quote</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Signature Tours (redesigned) -->
-        <section id="tours" class="py-10 px-4 bg-gradient-to-br from-yellow-50 via-white to-orange-50">
-          <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-8">
-              <h2 class="text-2xl md:text-3xl font-extrabold text-orange-800 mb-2">Signature Safari Tours</h2>
-              <p class="text-sm md:text-base text-gray-700 max-w-2xl mx-auto">Curated multi-day experiences across Kenya's most iconic wildlife destinations.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <!-- Tour 1: Premier Safari -->
-              <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-4 border-orange-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="bg-gradient-to-r from-orange-600 to-orange-500 px-5 py-4">
-                  <div class="flex justify-between items-start gap-2 mb-2">
-                    <h3 class="text-lg font-bold text-white">Amboseli, Laikipia & Masai Mara</h3>
-                    <span class="inline-block text-xs bg-white text-orange-700 px-2 py-1 rounded-full font-semibold">Premium</span>
-                  </div>
-                  <p class="text-sm text-orange-100">Experience Africa's ultimate wildlife circuit</p>
-                </div>
-                <div class="p-5">
-                  <div class="mb-4">
-                    <h4 class="text-sm font-bold text-gray-800 mb-2 flex items-center gap-2">
-                      <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1 4.5 4.5 0 11-4.814 6.98z"/></svg>
-                      Destinations
-                    </h4>
-                    <ul class="text-sm text-gray-700 space-y-1 ml-6">
-                      <li>✓ Amboseli National Park</li>
-                      <li>✓ Laikipia (Lewa or Ol Pejeta)</li>
-                      <li>✓ Masai Mara National Reserve</li>
-                    </ul>
-                  </div>
-                  <div class="flex gap-2 text-xs">
-                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full">8-10 Days</span>
-                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">Luxury</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Tour 2: Northern Circuit -->
-              <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-4 border-amber-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="bg-gradient-to-r from-amber-600 to-amber-500 px-5 py-4">
-                  <div class="flex justify-between items-start gap-2 mb-2">
-                    <h3 class="text-lg font-bold text-white">Laikipia & Masai Mara</h3>
-                    <span class="inline-block text-xs bg-white text-amber-700 px-2 py-1 rounded-full font-semibold">Classic</span>
-                  </div>
-                  <p class="text-sm text-amber-100">Kenya's northern wildlife showcase</p>
-                </div>
-                <div class="p-5">
-                  <div class="mb-4">
-                    <h4 class="text-sm font-bold text-gray-800 mb-2 flex items-center gap-2">
-                      <svg class="w-4 h-4 text-amber-600" fill="currentColor" viewBox="0 0 20 20"><path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1 4.5 4.5 0 11-4.814 6.98z"/></svg>
-                      Destinations
-                    </h4>
-                    <ul class="text-sm text-gray-700 space-y-1 ml-6">
-                      <li>✓ Laikipia Plateau</li>
-                      <li>✓ Loisaba, Ol Malo, Lewa</li>
-                      <li>✓ Masai Mara Reserve</li>
-                    </ul>
-                  </div>
-                  <div class="flex gap-2 text-xs">
-                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full">6-8 Days</span>
-                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Mid-Range</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Tour 3: Southern Circuit -->
-              <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-4 border-red-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="bg-gradient-to-r from-red-600 to-red-500 px-5 py-4">
-                  <div class="flex justify-between items-start gap-2 mb-2">
-                    <h3 class="text-lg font-bold text-white">Tsavo & Amboseli</h3>
-                    <span class="inline-block text-xs bg-white text-red-700 px-2 py-1 rounded-full font-semibold">Adventure</span>
-                  </div>
-                  <p class="text-sm text-red-100">Vast wilderness and iconic Mt. Kilimanjaro views</p>
-                </div>
-                <div class="p-5">
-                  <div class="mb-4">
-                    <h4 class="text-sm font-bold text-gray-800 mb-2 flex items-center gap-2">
-                      <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20"><path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1 4.5 4.5 0 11-4.814 6.98z"/></svg>
-                      Destinations
-                    </h4>
-                    <ul class="text-sm text-gray-700 space-y-1 ml-6">
-                      <li>✓ Tsavo West National Park</li>
-                      <li>✓ Amboseli National Park</li>
-                      <li>✓ Tsavo East National Park</li>
-                    </ul>
-                  </div>
-                  <div class="flex gap-2 text-xs">
-                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full">5-7 Days</span>
-                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Expedition</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Tour 4: Cultural Experience -->
-              <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-4 border-green-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="bg-gradient-to-r from-green-600 to-green-500 px-5 py-4">
-                  <div class="flex justify-between items-start gap-2 mb-2">
-                    <h3 class="text-lg font-bold text-white">Giraffe Centre & Wildlife</h3>
-                    <span class="inline-block text-xs bg-white text-green-700 px-2 py-1 rounded-full font-semibold">Family</span>
-                  </div>
-                  <p class="text-sm text-green-100">Interactive wildlife encounters in Nairobi region</p>
-                </div>
-                <div class="p-5">
-                  <div class="mb-4">
-                    <h4 class="text-sm font-bold text-gray-800 mb-2 flex items-center gap-2">
-                      <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1 4.5 4.5 0 11-4.814 6.98z"/></svg>
-                      Highlights
-                    </h4>
-                    <ul class="text-sm text-gray-700 space-y-1 ml-6">
-                      <li>✓ Conservation center tours</li>
-                      <li>✓ Feed endangered giraffes</li>
-                      <li>✓ Perfect for families</li>
-                    </ul>
-                  </div>
-                  <div class="flex gap-2 text-xs">
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">2-3 Days</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Educational</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Tour 5: Urban Safari -->
-              <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-4 border-yellow-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="bg-gradient-to-r from-yellow-600 to-yellow-500 px-5 py-4">
-                  <div class="flex justify-between items-start gap-2 mb-2">
-                    <h3 class="text-lg font-bold text-white">Nairobi National Park</h3>
-                    <span class="inline-block text-xs bg-white text-yellow-700 px-2 py-1 rounded-full font-semibold">Quick Escape</span>
-                  </div>
-                  <p class="text-sm text-yellow-100">Urban wildlife with city skyline backdrop</p>
-                </div>
-                <div class="p-5">
-                  <div class="mb-4">
-                    <h4 class="text-sm font-bold text-gray-800 mb-2 flex items-center gap-2">
-                      <svg class="w-4 h-4 text-yellow-600" fill="currentColor" viewBox="0 0 20 20"><path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1 4.5 4.5 0 11-4.814 6.98z"/></svg>
-                      Experiences
-                    </h4>
-                    <ul class="text-sm text-gray-700 space-y-1 ml-6">
-                      <li>✓ Game drives</li>
-                      <li>✓ City skyline views</li>
-                      <li>✓ Ideal for layovers</li>
-                    </ul>
-                  </div>
-                  <div class="flex gap-2 text-xs">
-                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">Day Tour</span>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">Budget</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Tour 6: Unique Experience -->
-              <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-4 border-purple-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="bg-gradient-to-r from-purple-600 to-purple-500 px-5 py-4">
-                  <div class="flex justify-between items-start gap-2 mb-2">
-                    <h3 class="text-lg font-bold text-white">Balloon Safari</h3>
-                    <span class="inline-block text-xs bg-white text-purple-700 px-2 py-1 rounded-full font-semibold">Exclusive</span>
-                  </div>
-                  <p class="text-sm text-purple-100">Unforgettable aerial perspective of Masai Mara</p>
-                </div>
-                <div class="p-5">
-                  <div class="mb-4">
-                    <h4 class="text-sm font-bold text-gray-800 mb-2 flex items-center gap-2">
-                      <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20"><path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1 4.5 4.5 0 11-4.814 6.98z"/></svg>
-                      What's Included
-                    </h4>
-                    <ul class="text-sm text-gray-700 space-y-1 ml-6">
-                      <li>✓ Balloon flight over plains</li>
-                      <li>✓ Sunrise experience</li>
-                      <li>✓ Champagne breakfast</li>
-                    </ul>
-                  </div>
-                  <div class="flex gap-2 text-xs">
-                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">3-4 Hours</span>
-                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full">Premium</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- CTA Section -->
-            <div class="mt-10 text-center">
-              <p class="text-sm md:text-base text-gray-700 mb-4">Ready to book your adventure?</p>
-              <div class="flex flex-wrap gap-3 justify-center">
-                <a href="packages.html" class="px-6 py-3 bg-orange-600 text-white font-bold rounded-lg shadow hover:bg-orange-700 transition">View All Packages</a>
-                <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20would%20like%20to%20customize%20a%20safari%20tour%20based%20on%20your%20signature%20packages." target="_blank" class="px-6 py-3 bg-green-600 text-white font-bold rounded-lg shadow hover:bg-green-700 transition flex items-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378 9.9 9.9 0 00-3.35 3.494 9.86 9.86 0 00-.75 4.75c0 5.495 4.467 9.964 9.962 9.964h.005c1.466 0 2.887-.235 4.24-.706a9.87 9.87 0 003.355-2.07 9.844 9.844 0 002.24-3.274 9.856 9.856 0 00.945-4.184c0-5.494-4.467-9.963-9.962-9.963z"/></svg>Customize Tour</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Removed extended sections for a minimal landing experience -->
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-16 px-2 sm:px-4 bg-gray-100 text-center">
-          <h2 class="text-3xl md:text-4xl font-bold text-yellow-700 mb-8">Get in Touch</h2>
-          <div class="max-w-xl mx-auto">
-            <form id="contactForm" class="bg-white rounded-lg shadow p-4 sm:p-8 flex flex-col gap-4 sm:gap-6" onsubmit="sendViaWhatsApp(event)">
-              <input type="text" id="contactName" placeholder="Name" class="border border-gray-300 rounded px-3 py-2 sm:px-4 sm:py-3 focus:outline-none focus:ring-2 focus:ring-yellow-600" required>
-              <input type="email" id="contactEmail" placeholder="Email" class="border border-gray-300 rounded px-3 py-2 sm:px-4 sm:py-3 focus:outline-none focus:ring-2 focus:ring-yellow-600" required>
-              <textarea id="contactMessage" placeholder="Message" rows="4" class="border border-gray-300 rounded px-3 py-2 sm:px-4 sm:py-3 focus:outline-none focus:ring-2 focus:ring-yellow-600" required></textarea>
-              <button type="submit" class="bg-green-600 text-white font-bold py-2 sm:py-3 rounded hover:bg-green-700 transition flex items-center justify-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378 9.9 9.9 0 00-3.35 3.494 9.86 9.86 0 00-.75 4.75c0 5.495 4.467 9.964 9.962 9.964h.005c1.466 0 2.887-.235 4.24-.706a9.87 9.87 0 003.355-2.07 9.844 9.844 0 002.24-3.274 9.856 9.856 0 00.945-4.184c0-5.494-4.467-9.963-9.962-9.963z"/></svg>Send via WhatsApp</button>
-            </form>
-            <p class="mt-4 text-sm text-gray-600">Or reach us directly:</p>
-            <div class="flex flex-wrap gap-3 justify-center mt-3">
-              <a href="https://wa.me/254712321342?text=Hi%20SafariPlug254!%20I%20would%20like%20to%20inquire%20about%20safari%20packages." target="_blank" class="px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-700 transition flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378 9.9 9.9 0 00-3.35 3.494 9.86 9.86 0 00-.75 4.75c0 5.495 4.467 9.964 9.962 9.964h.005c1.466 0 2.887-.235 4.24-.706a9.87 9.87 0 003.355-2.07 9.844 9.844 0 002.24-3.274 9.856 9.856 0 00.945-4.184c0-5.494-4.467-9.963-9.962-9.963z"/></svg>WhatsApp</a>
-              <a href="mailto:ianyy446@gmail.com?subject=Safari%20Inquiry&body=Hi%20SafariPlug254!%20I%20would%20like%20to%20inquire%20about%20safari%20packages%20and%20services.%20Please%20let%20me%20know%20the%20available%20options." class="px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m20 6-8 5-8-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Email</a>
-            </div>
-            <script>
-              function sendViaWhatsApp(event) {
-                event.preventDefault();
-                const name = document.getElementById('contactName').value;
-                const email = document.getElementById('contactEmail').value;
-                const message = document.getElementById('contactMessage').value;
-                const whatsappMessage = encodeURIComponent(`Hi SafariPlug254!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-                window.open(`https://wa.me/254712321342?text=${whatsappMessage}`, '_blank');
-                document.getElementById('contactForm').reset();
-              }
-            </script>
-            <div class="mt-6 sm:mt-8 text-gray-700 text-sm sm:text-base">
-              <p><span class="font-semibold">Email:</span> ianyy446@gmail.com</p>
-              <p><span class="font-semibold">Phone:</span> +254 712 321 342</p>
-            </div>
-          </div>
-        </section>
-
-  <footer class="bg-gradient-to-r from-green-700 via-green-600 to-green-700 text-white py-8 mt-16 font-poppins">
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Main Footer Content -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-        <!-- Brand & Info -->
-        <div class="text-center md:text-left">
-          <h3 class="font-extrabold text-lg mb-2"><span class="text-yellow-300">Safari</span><span class="text-green-200">Plug</span><span class="text-white">254</span></h3>
-          <p class="text-green-100 text-sm">Kenya safaris & cultural tours</p>
-          <p class="text-green-200 text-xs mt-1">Nairobi, Kenya</p>
-        </div>
-        
-        <!-- Contact Info -->
-        <div class="text-center">
-          <h4 class="font-bold text-sm mb-2 text-yellow-300">Contact</h4>
-          <p class="text-green-100 text-xs mb-1"><strong>WhatsApp:</strong> <a href="https://wa.me/254712321342" target="_blank" class="text-yellow-300 hover:text-yellow-100">+254 712 321 342</a></p>
-          <p class="text-green-100 text-xs"><strong>Email:</strong> <a href="mailto:ianyy446@gmail.com" class="text-yellow-300 hover:text-yellow-100">ianyy446@gmail.com</a></p>
-        </div>
-        
-        <!-- Quick Links -->
-        <div class="text-center md:text-right">
-          <h4 class="font-bold text-sm mb-2 text-yellow-300">Quick Links</h4>
-          <div class="flex flex-wrap justify-center md:justify-end gap-3 text-xs">
-            <a href="#about" class="text-green-100 hover:text-yellow-300 transition">About</a>
-            <a href="packages.html" class="text-green-100 hover:text-yellow-300 transition">Packages</a>
-            <a href="#contact" class="text-green-100 hover:text-yellow-300 transition">Contact</a>
-          </div>
-        </div>
-      </div>
       
-      <!-- Divider -->
-      <div class="border-t border-green-500 pt-4">
-        <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-green-100">
-          <p>&copy; 2025 SafariPlug254. All rights reserved.</p>
-          <div class="flex gap-4 mt-3 sm:mt-0">
-            <a href="https://wa.me/254712321342" target="_blank" aria-label="WhatsApp" class="hover:text-yellow-300 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.22-1.44l-.37-.22-3.67.96.98-3.58-.24-.37A9.94 9.94 0 0 1 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.6c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.62-.47-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.34-.26.27-1 1-1 2.44s1.02 2.83 1.16 3.03c.14.2 2.01 3.08 4.88 4.2.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg></a>
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-yellow-300 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5.006 3.676 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.324 21.128 22 17.006 22 12z"/></svg></a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-yellow-300 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 2.25a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 1.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm5.25 1.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg></a>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="section-subtitle">Kenya Safari & Coastal Experiences</p>
+        <h1>Bold Kenya journeys for wildlife lovers, beach seekers and explorers.</h1>
+        <p class="section-copy">Discover cleanly designed safari and beach packages from Masai Mara to Diani Beach. Every trip includes a trusted guide, reliable 4x4 transport and friendly local booking support.</p>
+        <div class="hero-actions">
+          <a class="button btn-primary" href="packages.html">Browse Packages</a>
+          <a class="button btn-secondary" href="https://wa.me/254712321342?text=Hello%20SafariPlug254%2C%20I%20would%20like%20to%20book%20a%20trip." target="_blank">Get Quote</a>
+          <a class="button btn-muted" href="tel:+254712321342">Call +254 712 321 342</a>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-subtitle">About SafariPlug254</p>
+          <h2 class="section-title">Beautiful safari journeys, designed for easy booking.</h2>
+          <p class="section-copy">SafariPlug254 brings together Kenya's best wildlife, beach and cultural tours in a clean, modern experience. Enjoy premier support from the moment you inquire until the day your adventure ends.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">✓</div>
+            <div>
+              <h3 class="feature-title">Trusted Local Guides</h3>
+              <p class="feature-copy">Experienced guides who know the best wildlife routes and hidden coastal viewpoints.</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">★</div>
+            <div>
+              <h3 class="feature-title">Flexible Packages</h3>
+              <p class="feature-copy">Custom tours for families, couples, groups and solo travellers. Easy changes, clear pricing.</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⏱</div>
+            <div>
+              <h3 class="feature-title">Fast Booking</h3>
+              <p class="feature-copy">WhatsApp booking keeps it simple and direct, with immediate confirmation and support.</p>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="section" id="tours">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-subtitle">Our Destinations</p>
+          <h2 class="section-title">The Journey Awaits</h2>
+          <p class="section-copy" style="max-width: 800px; margin: 1.25rem auto; font-size: 1.1rem; line-height: 1.8; color: #334155;">
+            From the majestic savannas of the <strong>Masai Mara</strong> and the iconic <strong>Amboseli</strong> with views of Mount Kilimanjaro, to the wild expanses of <strong>Tsavo</strong> and the northern treasures of <strong>Samburu</strong>, Kenya calls to the adventurous spirit. Float over endless plains in a sunrise <strong>Balloon Safari</strong>, hand-feed gentle giraffes at the <strong>Giraffe Centre</strong>, relax on the pristine shores of <strong>Diani Beach</strong> and <strong>Watamu</strong>, or explore the hidden gem that is <strong>Lake Nakuru</strong>. Whether you seek heart-pounding safari moments, tranquil coastal escapes, or cultural immersion in <strong>Laikipia</strong>, Kenya's diverse landscapes and unforgettable wildlife experiences are ready to transform your travel dreams into reality.
+          </p>
+          <a href="#packages" class="button btn-primary" style="margin-top: 1rem;">Explore Our Packages</a>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="packages">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 1.5rem;">
+          <p class="section-subtitle">Easy Planning</p>
+          <h2 class="section-title">Everything you need to start your trip.</h2>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Safari</span>
+              <h3 class="card-title">Masai Mara Day Safari</h3>
+              <p class="card-copy">Game drives, Big Five viewing and Mara plains in a compact day package.</p>
+              <ul class="card-copy">
+                <li>Entry fees from KES 2,060 (citizens) / USD 70 (non-residents)</li>
+                <li>Vehicle hire from USD 160</li>
+                <li>Perfect for a one-day wildlife adventure</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20the%20Masai%20Mara%20Day%20Safari." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Safari</span>
+              <h3 class="card-title">Amboseli Half/Full Day</h3>
+              <p class="card-copy">Mt. Kilimanjaro views, elephant herds and wetlands in a short safari format.</p>
+              <ul class="card-copy">
+                <li>Entry fees from KES 1,500 (citizens) / USD 70 (non-residents)</li>
+                <li>Vehicle hire from USD 160</li>
+                <li>Great for short stays and layovers</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Amboseli%20Half%20Full%20Day." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Safari</span>
+              <h3 class="card-title">Lake Nakuru Day Trip</h3>
+              <p class="card-copy">Flamingos, rhinos and scenic lakeside drives in one easy package.</p>
+              <ul class="card-copy">
+                <li>Entry fees from KES 1,500 (citizens) / USD 60 (non-residents)</li>
+                <li>Vehicle hire from USD 160</li>
+                <li>Perfect for nature and birdwatching</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Lake%20Nakuru%20Day%20Trip." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Safari</span>
+              <h3 class="card-title">Nairobi National Park</h3>
+              <p class="card-copy">A convenient city safari with wildlife, views of Nairobi and easy single-day booking.</p>
+              <ul class="card-copy">
+                <li>Entry fees from KES 450 (citizens) / USD 50 (non-residents)</li>
+                <li>Perfect for arrivals and quick wildlife experiences</li>
+                <li>Includes transport options from Nairobi</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Nairobi%20National%20Park." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Coastal</span>
+              <h3 class="card-title">Diani Beach Escape</h3>
+              <p class="card-copy">Beach transfers, water activities and relaxed luxury on Kenya's south coast.</p>
+              <ul class="card-copy">
+                <li>From USD 120</li>
+                <li>Snorkeling and marine tours</li>
+                <li>Ideal for couples and families</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Diani%20Beach%20Escape." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Coastal</span>
+              <h3 class="card-title">Watamu & Malindi Tour</h3>
+              <p class="card-copy">Coral reefs, marine park visits and beachside culture in a relaxed north coast package.</p>
+              <ul class="card-copy">
+                <li>From USD 110</li>
+                <li>Snorkeling and marine park visits</li>
+                <li>Great for beach lovers and snorkelers</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Watamu%20Malindi%20Tour." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Adventure</span>
+              <h3 class="card-title">Hell's Gate Adventure</h3>
+              <p class="card-copy">Cycling, hiking and red-rock scenery inside a dramatic national park.</p>
+              <ul class="card-copy">
+                <li>Entry fees from KES 500</li>
+                <li>Guide-led walking and cycling</li>
+                <li>Perfect for active day trips</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Hells%20Gate%20Adventure." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <span class="card-tag">Wildlife</span>
+              <h3 class="card-title">Giraffe Centre Experience</h3>
+              <p class="card-copy">Meet Rothschild giraffes near Nairobi and enjoy a close wildlife experience with feeding and conservation insights.</p>
+              <ul class="card-copy">
+                <li>Entry from KES 500 per person</li>
+                <li>Transfer and guide options available</li>
+                <li>Great for families and day trips</li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20the%20Giraffe%20Centre%20Experience." target="_blank">Book via WhatsApp</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 1.25rem;">
+          <p class="section-subtitle">Contact</p>
+          <h2 class="section-title">Ready to plan your Kenyan safari?</h2>
+          <p class="section-copy">Enter your name and email below, then send your request through WhatsApp for quick booking support.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <p><strong>Phone</strong> <a href="tel:+254712321342">+254 712 321 342</a></p>
+            <p><strong>Email</strong> <a href="mailto:ianyy446@gmail.com">ianyy446@gmail.com</a></p>
+            <p>Nairobi, Kenya</p>
+          </div>
+          <form id="whatsapp-form" class="contact-form" onsubmit="handleWhatsAppSubmit(event)">
+            <div class="form-grid">
+              <label class="form-field" for="contact-name">
+                <span>Name</span>
+                <input id="contact-name" name="name" type="text" placeholder="Your name" required />
+              </label>
+              <label class="form-field" for="contact-email">
+                <span>Email</span>
+                <input id="contact-email" name="email" type="email" placeholder="Your email" required />
+              </label>
+            </div>
+            <button type="submit" class="button btn-primary">Send via WhatsApp</button>
+            <p class="form-note">This will open WhatsApp with your name and email pre-filled.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SafariPlug254</h3>
+        <p>Kenya safari and coastal tours with direct support and clean booking.</p>
+      </div>
+      <div>
+        <h3>Links</h3>
+        <p><a href="packages.html">Packages</a></p>
+        <p><a href="#about">About</a></p>
+        <p><a href="#contact">Contact</a></p>
+      </div>
+      <div>
+        <h3>Follow & Connect</h3>
+        <p><a href="https://wa.me/254712321342" target="_blank">WhatsApp</a></p>
+        <p><a href="https://facebook.com/safariplug254" target="_blank">Facebook</a></p>
+        <p><a href="https://instagram.com/safariplug254" target="_blank">Instagram</a></p>
+        <p><a href="https://tiktok.com/@safariplug254" target="_blank">TikTok</a></p>
       </div>
     </div>
+    <p class="footer-note">&copy; 2026 SafariPlug254. All rights reserved.</p>
   </footer>
-
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+    function handleWhatsAppSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      if (!name || !email) {
+        return;
+      }
+      const message = `Hello SafariPlug254, my name is ${name} and my email is ${email}. I would like more information about your safari packages.`;
+      const url = `https://wa.me/254712321342?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
 </html>
