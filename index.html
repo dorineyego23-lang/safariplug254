@@ -51,7 +51,11 @@
       <a class="brand" href="index.html">
         <img class="logo-img" src="safariplug254.png" alt="SafariPlug254 logo">
         <div>
-          <p class="brand-name">SafariPlug254</p>
+          <p class="brand-name">
+            <span class="brand-word brand-word--safari">SAFARI</span>
+            <span class="brand-word brand-word--plug">PLUG</span>
+            <span class="brand-word brand-word--254">254</span>
+          </p>
           <p class="brand-tag">Kenya Safaris & Tours</p>
         </div>
       </a>
@@ -311,6 +315,13 @@
     const navLinks = document.getElementById('nav-links');
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
+    });
+    document.querySelectorAll('.nav-links a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          navLinks.classList.remove('show');
+        }
+      });
     });
     function handleWhatsAppSubmit(event) {
       event.preventDefault();
