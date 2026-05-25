@@ -238,9 +238,9 @@ header a,
 
 @media (max-width: 768px) {
   .hero {
-    min-height: auto;
-    padding: 1.75rem 1rem 2.25rem;
-    align-items: start;
+    min-height: 55vh;
+    padding: 2rem 1rem 2.5rem;
+    align-items: center;
   }
 
   .hero h1 {
