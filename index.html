@@ -49,7 +49,7 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">
-        <img class="logo-img" src="safariplug254.png" alt="SafariPlug254 logo">
+        <img class="logo-img" src="safariplug254.png" alt="SafariPlug254 logo" srcset="safariplug254.png 56w, safariplug254.png 112w, safariplug254.png 224w" sizes="56px" width="56" height="56">
         <div>
           <p class="brand-name">
             <span class="brand-word brand-word--safari">SAFARI</span>
@@ -59,12 +59,15 @@
           <p class="brand-tag">Kenya Safaris & Tours</p>
         </div>
       </a>
-      <button class="menu-toggle" aria-label="Open navigation" id="menu-toggle">
+      <button class="menu-toggle" aria-label="Open navigation" id="menu-toggle" aria-expanded="false" aria-controls="nav-links">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+      <button class="menu-close" aria-label="Close navigation" id="menu-close" aria-expanded="false" aria-controls="nav-links">
+        <span style="font-size:2rem;line-height:1;color:#0f172a;">&times;</span>
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#packages">Packages</a></li>
+        <li><a href="packages.html">Packages</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       
@@ -73,13 +76,48 @@
   <main>
     <section class="hero">
       <div class="container">
-        <p class="section-subtitle">Kenya Safari & Coastal Experiences</p>
-        <h1>Bold Kenya journeys for wildlife lovers, beach seekers and explorers.</h1>
-        <p class="section-copy">Discover cleanly designed safari and beach packages from Masai Mara to Diani Beach. Every trip includes a trusted guide, reliable 4x4 transport and friendly local booking support.</p>
+        <h1 class="hero-title">Experience Kenya's Wonders.<br>Book Your Dream Safari, Pay Your Way.</h1>
+        <p class="hero-lead">SafariPlug254 makes it easy to explore Kenya's top wildlife and beach destinations with flexible, direct booking and trusted local guides.</p>
         <div class="hero-actions">
-          <a class="button btn-primary" href="packages.html">Browse Packages</a>
-          <a class="button btn-secondary" href="https://wa.me/254712321342?text=Hello%20SafariPlug254%2C%20I%20would%20like%20to%20book%20a%20trip." target="_blank">Get Quote</a>
-          <a class="button btn-muted" href="tel:+254712321342">Call +254 712 321 342</a>
+          <a class="button btn-primary" href="#how-it-works">See How It Works</a>
+          <a class="button btn-secondary" href="packages.html">Browse Packages</a>
+          <a class="button btn-muted" href="https://wa.me/254712321342?text=Hello%20SafariPlug254%2C%20I%20want%20to%20plan%20a%20trip." target="_blank">WhatsApp Us</a>
+        </div>
+        <div class="hero-trust">
+          <span class="trust-badge">NO HIDDEN FEES</span>
+          <span class="trust-badge">INSTANT SUPPORT</span>
+          <span class="trust-badge">SECURE BOOKINGS</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:2.5rem;">
+          <p class="section-subtitle">How It Works</p>
+          <h2 class="section-title">Book Your Safari in 4 Simple Steps</h2>
+        </div>
+        <div class="how-steps-grid">
+          <div class="how-step">
+            <div class="how-step-number">1</div>
+            <h3 class="how-step-title">Choose Your Adventure</h3>
+            <p>Browse our curated safari and beach packages or request a custom trip.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-number">2</div>
+            <h3 class="how-step-title">Get a Quote Instantly</h3>
+            <p>Contact us via WhatsApp or call for a fast, transparent quote—no hidden fees.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-number">3</div>
+            <h3 class="how-step-title">Book & Pay Flexibly</h3>
+            <p>Reserve your spot with easy payment options. Pay in full or in simple installments.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-number">4</div>
+            <h3 class="how-step-title">Enjoy Your Safari</h3>
+            <p>Travel with confidence—our local guides and support team handle the rest!</p>
+          </div>
         </div>
       </div>
     </section>
@@ -127,164 +165,28 @@
         </div>
       </div>
     </section>
-    <section class="section" id="packages">
+    <section class="section contact-section" id="contact">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 1.5rem;">
-          <p class="section-subtitle">Easy Planning</p>
-          <h2 class="section-title">Everything you need to start your trip.</h2>
-        </div>
-        <div class="cards-grid">
-          <article class="card">
-            <div class="card-header">
-              <span class="card-tag">Safari</span>
-              <h3 class="card-title">Masai Mara Day Safari</h3>
-              <p class="card-copy">Game drives, Big Five viewing and Mara plains in a compact day package.</p>
-              <ul class="card-copy">
-                <li>Entry fees from KES 2,060 (citizens) / USD 70 (non-residents)</li>
-                <li>Vehicle hire from USD 160</li>
-                <li>Perfect for a one-day wildlife adventure</li>
-              </ul>
-            </div>
-            <div class="card-action">
-              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20the%20Masai%20Mara%20Day%20Safari." target="_blank">Book via WhatsApp</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-header">
-              <span class="card-tag">Safari</span>
-              <h3 class="card-title">Amboseli Half/Full Day</h3>
-              <p class="card-copy">Mt. Kilimanjaro views, elephant herds and wetlands in a short safari format.</p>
-              <ul class="card-copy">
-                <li>Entry fees from KES 1,500 (citizens) / USD 70 (non-residents)</li>
-                <li>Vehicle hire from USD 160</li>
-                <li>Great for short stays and layovers</li>
-              </ul>
-            </div>
-            <div class="card-action">
-              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Amboseli%20Half%20Full%20Day." target="_blank">Book via WhatsApp</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-header">
-              <span class="card-tag">Safari</span>
-              <h3 class="card-title">Lake Nakuru Day Trip</h3>
-              <p class="card-copy">Flamingos, rhinos and scenic lakeside drives in one easy package.</p>
-              <ul class="card-copy">
-                <li>Entry fees from KES 1,500 (citizens) / USD 60 (non-residents)</li>
-                <li>Vehicle hire from USD 160</li>
-                <li>Perfect for nature and birdwatching</li>
-              </ul>
-            </div>
-            <div class="card-action">
-              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Lake%20Nakuru%20Day%20Trip." target="_blank">Book via WhatsApp</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-header">
-              <span class="card-tag">Safari</span>
-              <h3 class="card-title">Nairobi National Park</h3>
-              <p class="card-copy">A convenient city safari with wildlife, views of Nairobi and easy single-day booking.</p>
-              <ul class="card-copy">
-                <li>Entry fees from KES 450 (citizens) / USD 50 (non-residents)</li>
-                <li>Perfect for arrivals and quick wildlife experiences</li>
-                <li>Includes transport options from Nairobi</li>
-              </ul>
-            </div>
-            <div class="card-action">
-              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Nairobi%20National%20Park." target="_blank">Book via WhatsApp</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-header">
-              <span class="card-tag">Coastal</span>
-              <h3 class="card-title">Diani Beach Escape</h3>
-              <p class="card-copy">Beach transfers, water activities and relaxed luxury on Kenya's south coast.</p>
-              <ul class="card-copy">
-                <li>From USD 120</li>
-                <li>Snorkeling and marine tours</li>
-                <li>Ideal for couples and families</li>
-              </ul>
-            </div>
-            <div class="card-action">
-              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Diani%20Beach%20Escape." target="_blank">Book via WhatsApp</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-header">
-              <span class="card-tag">Coastal</span>
-              <h3 class="card-title">Watamu & Malindi Tour</h3>
-              <p class="card-copy">Coral reefs, marine park visits and beachside culture in a relaxed north coast package.</p>
-              <ul class="card-copy">
-                <li>From USD 110</li>
-                <li>Snorkeling and marine park visits</li>
-                <li>Great for beach lovers and snorkelers</li>
-              </ul>
-            </div>
-            <div class="card-action">
-              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Watamu%20Malindi%20Tour." target="_blank">Book via WhatsApp</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-header">
-              <span class="card-tag">Adventure</span>
-              <h3 class="card-title">Hell's Gate Adventure</h3>
-              <p class="card-copy">Cycling, hiking and red-rock scenery inside a dramatic national park.</p>
-              <ul class="card-copy">
-                <li>Entry fees from KES 500</li>
-                <li>Guide-led walking and cycling</li>
-                <li>Perfect for active day trips</li>
-              </ul>
-            </div>
-            <div class="card-action">
-              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20Hells%20Gate%20Adventure." target="_blank">Book via WhatsApp</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-header">
-              <span class="card-tag">Wildlife</span>
-              <h3 class="card-title">Giraffe Centre Experience</h3>
-              <p class="card-copy">Meet Rothschild giraffes near Nairobi and enjoy a close wildlife experience with feeding and conservation insights.</p>
-              <ul class="card-copy">
-                <li>Entry from KES 500 per person</li>
-                <li>Transfer and guide options available</li>
-                <li>Great for families and day trips</li>
-              </ul>
-            </div>
-            <div class="card-action">
-              <a class="button btn-secondary" href="https://wa.me/254712321342?text=I%20would%20like%20to%20book%20the%20Giraffe%20Centre%20Experience." target="_blank">Book via WhatsApp</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="text-center" style="margin-bottom: 1.25rem;">
-          <p class="section-subtitle">Contact</p>
-          <h2 class="section-title">Ready to plan your Kenyan safari?</h2>
-          <p class="section-copy">Enter your name and email below, then send your request through WhatsApp for quick booking support.</p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <p><strong>Phone</strong> <a href="tel:+254712321342">+254 712 321 342</a></p>
-            <p><strong>Email</strong> <a href="mailto:ianyy446@gmail.com">ianyy446@gmail.com</a></p>
-            <p>Nairobi, Kenya</p>
+        <div class="contact-boxes">
+          <div class="contact-box">
+            <span class="contact-box-label">Phone</span>
+            <a href="tel:+254712321342" class="contact-box-value">+254 712 321 342</a>
           </div>
-          <form id="whatsapp-form" class="contact-form" onsubmit="handleWhatsAppSubmit(event)">
-            <div class="form-grid">
-              <label class="form-field" for="contact-name">
-                <span>Name</span>
-                <input id="contact-name" name="name" type="text" placeholder="Your name" required />
-              </label>
-              <label class="form-field" for="contact-email">
-                <span>Email</span>
-                <input id="contact-email" name="email" type="email" placeholder="Your email" required />
-              </label>
-            </div>
-            <button type="submit" class="button btn-primary">Send via WhatsApp</button>
-            <p class="form-note">This will open WhatsApp with your name and email pre-filled.</p>
-          </form>
+          <div class="contact-box">
+            <span class="contact-box-label">WhatsApp</span>
+            <a href="https://wa.me/254712321342" class="contact-box-value" target="_blank">Message Us</a>
+          </div>
+          <div class="contact-box">
+            <span class="contact-box-label">Location</span>
+            <span class="contact-box-value">Nairobi, Kenya</span>
+          </div>
         </div>
+        <form id="whatsapp-form" class="contact-form-simple" onsubmit="handleWhatsAppSimple(event)">
+          <label for="contact-message" class="form-label-simple">Your Message</label>
+          <textarea id="contact-message" name="message" rows="3" required>Hi SafariPlug254, I’d like to plan a safari or get more information about your packages.</textarea>
+          <button type="submit" class="button btn-primary" style="width:100%;margin-top:0.8rem;">Send via WhatsApp</button>
+          <p class="form-note">Edit your message if you wish, then tap send to open WhatsApp.</p>
+        </form>
       </div>
     </section>
   </main>
@@ -313,13 +215,41 @@
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
+    const menuClose = document.getElementById('menu-close');
+    // Accessibility: tie toggle to menu and expose expanded state
+    menuToggle.setAttribute('aria-controls', 'nav-links');
+    menuClose.setAttribute('aria-controls', 'nav-links');
+    function setAriaExpanded(isOpen) {
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuClose.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    function updateMenuButtons() {
+      if (window.innerWidth < 768 && navLinks.classList.contains('show')) {
+        menuToggle.style.display = 'none';
+        menuClose.style.display = 'inline-flex';
+      } else {
+        menuToggle.style.display = 'inline-flex';
+        menuClose.style.display = 'none';
+      }
+    }
+    function openMenu() {
+      navLinks.classList.add('show');
+      updateMenuButtons();
+      setAriaExpanded(true);
+    }
+    function closeMenu() {
+      navLinks.classList.remove('show');
+      updateMenuButtons();
+      setAriaExpanded(false);
+    }
+    menuToggle.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    window.addEventListener('resize', updateMenuButtons);
+    updateMenuButtons();
     document.querySelectorAll('.nav-links a').forEach((link) => {
       link.addEventListener('click', () => {
         if (window.innerWidth < 768) {
-          navLinks.classList.remove('show');
+          closeMenu();
         }
       });
     });
@@ -329,14 +259,10 @@
     window.addEventListener('load', () => {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     });
-    function handleWhatsAppSubmit(event) {
+    function handleWhatsAppSimple(event) {
       event.preventDefault();
-      const name = document.getElementById('contact-name').value.trim();
-      const email = document.getElementById('contact-email').value.trim();
-      if (!name || !email) {
-        return;
-      }
-      const message = `Hello SafariPlug254, my name is ${name} and my email is ${email}. I would like more information about your safari packages.`;
+      const message = document.getElementById('contact-message').value.trim();
+      if (!message) return;
       const url = `https://wa.me/254712321342?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
     }
